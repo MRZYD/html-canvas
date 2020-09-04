@@ -1,3 +1,4 @@
+cavImgLoadingNone();
 let targetDom = document.getElementById('bs-poster-0');
 let posterParams = {
     allowTaint: false,
@@ -106,5 +107,45 @@ function posterStyle(posterImg) {
     posterImg.style.position = "absolute";
     posterImg.style.top = 0;
     posterImg.style.left = 0;
+}
+
+//轮播图切换
+let posterTemp = new Swiper('.poster-temp', {
+    spaceBetween: 15,
+    slidesPerView: 4.2,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    on:{
+        click: function(){
+            cavImgLoading();
+            console.log('swiper下标1-->', this.clickedIndex);
+            cavImgLoadingNone();
+        }
+    }
+});
+
+let posterPic = new Swiper('.poster-pic', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    centeredSlides: true,
+    thumbs: {
+        swiper: posterTemp
+    },
+});
+
+//海报生成loading打开
+function cavImgLoading(){
+    let cavImgLoading = document.getElementById('cavImgLoading');
+    cavImgLoading.style.display = "block";
+
+}
+
+//海报生成loading关闭
+function cavImgLoadingNone(){
+    let cavImgLoading = document.getElementById('cavImgLoading');
+    setTimeout(() => {
+        cavImgLoading.style.display = "none";
+    },500)
 }
 
