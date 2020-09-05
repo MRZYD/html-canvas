@@ -131,7 +131,7 @@ body {
 }
 
 .poster-img{
-  width: 100%;
+  width: 105%;
   height: 100%;
   display: block;
   position: absolute;
@@ -151,7 +151,39 @@ body {
   right: 0;
   bottom: 0;
   z-index: 5;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
+
+.poster-bg1{
+  background-image: url('../imgs/poster_bg1.png');
+}
+.poster-bg2{
+  background-image: url('../imgs/poster_bg2.png');
+}
+.poster-bg3{
+  background-image: url('../imgs/poster_bg3.png');
+}
+.poster-bg4{
+  background-image: url('../imgs/poster_bg4.png');
+}
+.poster-bg5{
+  background-image: url('../imgs/poster_bg5.png');
+}
+.poster-bg6{
+  background-image: url('../imgs/poster_bg6.png');
+}
+.poster-bg7{
+  background-image: url('../imgs/poster_bg7.png');
+}
+.poster-bg8{
+  background-image: url('../imgs/poster_bg8.png');
+}
+.poster-bg9{
+  background-image: url('../imgs/poster_bg9.png');
+}
+
 
 .user-img{
   width: 1.35rem !important;
@@ -203,7 +235,7 @@ body {
   margin: 0 auto;
 }
 
-.poster-secpic{ 
+.poster-secpic{
   width: 5.30rem !important;
   height: 2.96rem;
   border-radius: 6px;
