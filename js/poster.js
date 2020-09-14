@@ -4,14 +4,16 @@ window.onload = function () {
         el: "#app",//将vue挂载到html中你创建的那个带id="app"上
         data: {
             loading: true,
+            swiperIndex: 0,
             userImg: 'https://fimage.268xue.com/admin/v3/img/default/admin_userpace.jpg?v=1598341671573',
             userName: '清羽',
             articleTitle: '文章标题文章标题文章标题文章标题文章标题文章标题',
             articleImg: 'https://p.ssl.qhimg.com/t0169dc991681fe4989.jpg',
             ewmImg: 'https://fimage.268xue.com/admin/v3/img/default/admin_userpace.jpg?v=1598341671573',
             zwmImg: '../imgs/zwm-icon.png',
-            eduForm:'../imgs/edu-form.png',
-            compangLogo: '../imgs/company-logo.png',
+            eduText: '来自“268教育软件”',
+            compangLogo: '../imgs/company_logo.png',
+            companyText: '268教育软件提供技术支持',
             posterImg: [{
                 bg: '../imgs/poster_bg1.png',
                 src: '',
@@ -88,6 +90,7 @@ window.onload = function () {
                         click: function () {
                             that.loading = true;
                             let index = this.clickedIndex;
+                            that.swiperIndex = index;
                             switch (index) {
                                 case 0:
                                     posterCanvas1(that);
@@ -171,7 +174,7 @@ function posterCanvas2(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas3(that) {
@@ -190,7 +193,7 @@ function posterCanvas3(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas4(that) {
@@ -209,7 +212,7 @@ function posterCanvas4(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas5(that) {
@@ -228,7 +231,7 @@ function posterCanvas5(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas6(that) {
@@ -247,7 +250,7 @@ function posterCanvas6(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas7(that) {
@@ -266,7 +269,7 @@ function posterCanvas7(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas8(that) {
@@ -285,7 +288,7 @@ function posterCanvas8(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 function posterCanvas9(that) {
@@ -304,7 +307,7 @@ function posterCanvas9(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 1000)
+    }, 500)
 }
 
 // 获取id canvas参数
@@ -322,10 +325,10 @@ function ImgParams(index) {
     let posterParams = {
         canvas: Canvas,
         scale,
-        height: height, //设置canvas尺寸与所截图尺寸相同，防止白边
         width: width, //设置canvas尺寸与所截图尺寸相同，防止白边
+        height: height, //设置canvas尺寸与所截图尺寸相同，防止白边
         useCORS: true,
-        logging: true
+        // logging: true,
     }
     return posterParams;
 }
@@ -358,9 +361,6 @@ function baseImg(that, index) {
     });
     convertImgToBase64(that.zwmImg, function (base64Img) {
         that.zwmImg = base64Img;
-    });
-    convertImgToBase64(that.eduForm, function (base64Img) {
-        that.eduForm = base64Img;
     });
     convertImgToBase64(that.compangLogo, function (base64Img) {
         that.compangLogo = base64Img;

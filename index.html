@@ -44,7 +44,7 @@
         <!--海报预览区-->
         <section class="bs-review__wrap">
         <!-- 海报图片Swiper -->
-        <div class="swiper-container poster-pic">
+        <div class="swiper-container swiper-no-swiping poster-pic">
             <div class="swiper-wrapper">
                 <div class="swiper-slide swiper-no-swiping">
                     <div class="bs-poster" id="bs-poster-0" v-if="posterImg[0].isSecShow">
@@ -55,12 +55,12 @@
                             <p class="user-study">邀您一起来学习</p>
                             <p class="poster-title">{{articleTitle}}</p>
                             <div><img class="poster-secpic" :src="articleImg"></div>
-                            <div><img class="edu-form" :src="eduForm" alt=""></div>
+                            <div class="edu-form">来自“268教育软件”</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[0].isPoster" :src="posterImg[0].src" alt="">
@@ -74,12 +74,12 @@
                             <p class="user-study">邀您一起来学习</p>
                             <p class="poster-title">{{articleTitle}}</p>
                             <div><img class="poster-secpic" :src="articleImg"></div>
-                            <div><img class="edu-form" :src="eduForm" alt=""></div>
+                            <div class="edu-form">来自“268教育软件”</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[1].isPoster" :src="posterImg[1].src" alt="">
@@ -93,12 +93,12 @@
                             <p class="user-study">邀您一起来学习</p>
                             <p class="poster-title">{{articleTitle}}</p>
                             <div><img class="poster-secpic poster-secpic3" :src="articleImg"></div>
-                            <div><img class="edu-form" :src="eduForm" alt=""></div>
+                            <div class="edu-form">来自“268教育软件”</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[2].isPoster" :src="posterImg[2].src" alt="">
@@ -112,12 +112,12 @@
                             <p class="user-study">邀您一起来看直播</p>
                             <p class="poster-title">{{articleTitle}}</p>
                             <div><img class="poster-secpic" :src="articleImg"></div>
-                            <div><img class="edu-form" :src="eduForm" alt=""></div>
+                            <div class="edu-form">来自“268教育软件”</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[3].isPoster" :src="posterImg[3].src" alt="">
@@ -131,12 +131,12 @@
                             <p class="user-study">邀您一起来看直播</p>
                             <p class="poster-title">{{articleTitle}}</p>
                             <div><img class="poster-secpic" :src="articleImg"></div>
-                            <div><img class="edu-form" :src="eduForm" alt=""></div>
+                            <div class="edu-form">来自“268教育软件”</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[4].isPoster" :src="posterImg[4].src" alt="">
@@ -151,12 +151,12 @@
                             <p class="poster-title poster-title3">{{articleTitle}}</p>
                             <p class="poster-text">分享内容</p>
                             <!-- <div class="poster-secpic" :style="{backgroundImage: 'url(' + articleImg + ')'}"></div> -->
-                            <img class="edu-form edu-form5" :src="eduForm">
+                            <div class="edu-form edu-form5">来自“268教育软件”</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[5].isPoster" :src="posterImg[5].src" alt="">
@@ -171,12 +171,12 @@
                                 <div><img class="user-info-img" :src="userImg"></div>
                             </div>
                             <div class="user-title-box"><div class="poster-user-title">发现了一门好课，邀请您一起来拼团</div></div>
-                            <div class="user-title-box"><div class="poster-user-title">- 来自“268教育软件”</div></div>
+                            <div class="user-title-box"><div class="poster-user-title">- {{companyText}} -</div></div>
                             <div class="share-user-box">
                                 <div><img class="share-ewm7" :src="ewmImg"></div>
                                 <div class="share-ewm-box"><div class="share-ewm-text">扫码查看此课程</div></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[6].isPoster" :src="posterImg[6].src" alt="">
@@ -193,11 +193,11 @@
                                         <span class="user-info-name">{{userName}}</span>
                                     </div>
                                     <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1">发现了一门好课，邀请您一起来拼团</div></div>
-                                    <div class="user-title-box1"><div class="poster-user-title1">- 来自“268教育软件”</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1">- {{companyText}} -</div></div>
                                 </div>
                                 <div><img class="share-ewm8" :src="ewmImg"></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[7].isPoster" :src="posterImg[7].src" alt="">
@@ -214,11 +214,11 @@
                                         <span class="user-info-name">{{userName}}</span>
                                     </div>
                                     <div class="user-title-box2 user-title-box1_top"><div class="poster-user-title1">发现了一门好课，邀请您一起来拼团</div></div>
-                                    <div class="user-title-box2"><div class="poster-user-title1">- 来自“268教育软件”</div></div>
+                                    <div class="user-title-box2"><div class="poster-user-title1">- {{companyText}} -</div></div>
                                 </div>
                                 <div><img class="share-ewm9" :src="ewmImg"></div>
                             </div>
-                            <div><img class="company-logo" :src="compangLogo" alt=""></div>
+                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg[8].isPoster" :src="posterImg[8].src" alt="">
