@@ -4,6 +4,11 @@ body {
   height: 100%;
 }
 
+#app{
+  width: 100%;
+  height: 100%;
+}
+
 img{
   display: block;
 }
@@ -67,7 +72,12 @@ body {
 
 /* 标题 */
 .bs-review__wrap{
-  padding-bottom: 2.5rem;
+  width: 100%;
+  height: calc(100% - 4.12rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .bar {
@@ -126,8 +136,12 @@ body {
   box-sizing: content-box;
 }
 
-.poster-pic{
-  padding-top: 1.78rem !important;
+.poster-temp{
+  width: 100%;
+  height: 1.92rem;
+  position: fixed;
+  left: 0;
+  bottom: 2.2rem;
 }
 
 .poster-temp .swiper-wrapper{
@@ -457,14 +471,14 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.35rem;
-  transform: scale(0.5);
+  font-size: 0.25rem;
+  transform: scale(0.7);
 }
 
 .company-logo img{
   width: 0.64rem;
   height: 0.64rem;
-  display: block;
+  display: inline-block;
   margin-right: 10px;
 }
 
@@ -547,13 +561,13 @@ body {
 .share-user-box{
   width: 1.40rem;
   height: 1.62rem;
-  margin-left: 3.6rem;
+  margin-left: 3.8rem;
   margin-top: 0.31rem;
 }
 
 .share-ewm7{
-  width: 1.17rem !important;
-  height: 1.17rem;
+  width: 0.86rem !important;
+  height: 0.86rem;
   margin: 0 auto;
   display: block;
   background-size: 100% 100%;
@@ -605,14 +619,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.share-ewm9{
-  width: 1.07rem !important;
-  height: 1.07rem;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 .user-info1{
   width: 100%;
   display: flex;
@@ -644,10 +650,6 @@ body {
 
 .user-title-box1{
   margin-left: 0.1rem;
-}
-
-.user-title-box2{
-  margin-left: 0.15rem;
 }
 
 .user-title-box1_top{

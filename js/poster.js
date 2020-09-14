@@ -9,7 +9,7 @@ window.onload = function () {
             userName: '清羽',
             articleTitle: '文章标题文章标题文章标题文章标题文章标题文章标题',
             articleImg: 'https://p.ssl.qhimg.com/t0169dc991681fe4989.jpg',
-            ewmImg: 'https://fimage.268xue.com/admin/v3/img/default/admin_userpace.jpg?v=1598341671573',
+            ewmImg: '../imgs/ewm-img.png',
             zwmImg: '../imgs/zwm-icon.png',
             eduText: '来自“268教育软件”',
             compangLogo: '../imgs/company_logo.png',
@@ -167,8 +167,8 @@ function posterCanvas2(that) {
         html2canvas(targetDom, posterParams).then(canvas => {
             // canvas为转换后的Canvas对象
             that.posterImg[1].src = canvas.toDataURL("image/png", 1);  // 导出图片
-            that.posterImg[1].isSecShow = false;
-            that.posterImg[1].isPoster = true;
+            // that.posterImg[1].isSecShow = false;
+            // that.posterImg[1].isPoster = true;
             that.loading = false;
         }).catch((error) => {
             console.log(error)
