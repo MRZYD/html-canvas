@@ -155,7 +155,7 @@ function posterCanvas1(that) {
             console.log(error)
             that.loading = false;
         })
-    }, 2000)
+    }, 1000)
 }
 
 function posterCanvas2(that) {
@@ -167,8 +167,8 @@ function posterCanvas2(that) {
         html2canvas(targetDom, posterParams).then(canvas => {
             // canvas为转换后的Canvas对象
             that.posterImg[1].src = canvas.toDataURL("image/png", 1);  // 导出图片
-            // that.posterImg[1].isSecShow = false;
-            // that.posterImg[1].isPoster = true;
+            that.posterImg[1].isSecShow = false;
+            that.posterImg[1].isPoster = true;
             that.loading = false;
         }).catch((error) => {
             console.log(error)
@@ -327,8 +327,9 @@ function ImgParams(index) {
         scale,
         width: width, //设置canvas尺寸与所截图尺寸相同，防止白边
         height: height, //设置canvas尺寸与所截图尺寸相同，防止白边
-        useCORS: true,
-        // logging: true,
+        useCORS: true, // 【重要】开启跨域配置
+        allowTaint: true,//允许跨域图片
+        backgroundColor:null,
     }
     return posterParams;
 }
@@ -346,15 +347,15 @@ function baseImg(that, index) {
         that.articleTitle = that.articleTitle.slice(0,22) + '...';
     }
     //处理图片为base64
-    convertImgToBase64(that.userImg, function (base64Img) {
-        that.userImg = base64Img;
-    });
-    convertImgToBase64(that.articleImg, function (base64Img) {
-        that.articleImg = base64Img;
-    });
-    convertImgToBase64(that.ewmImg, function (base64Img) {
-        that.ewmImg = base64Img;
-    });
+    // convertImgToBase64(that.userImg, function (base64Img) {
+    //     that.userImg = base64Img;
+    // });
+    // convertImgToBase64(that.articleImg, function (base64Img) {
+    //     that.articleImg = base64Img;
+    // });
+    // convertImgToBase64(that.ewmImg, function (base64Img) {
+    //     that.ewmImg = base64Img;
+    // });
 
     convertImgToBase64(that.posterImg[index].bg, function (base64Img) {
         that.posterImg[index].bg = base64Img;
