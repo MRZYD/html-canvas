@@ -328,7 +328,7 @@ function ImgParams(index) {
         width: width, //设置canvas尺寸与所截图尺寸相同，防止白边
         height: height, //设置canvas尺寸与所截图尺寸相同，防止白边
         useCORS: true, // 【重要】开启跨域配置
-        allowTaint: true,//允许跨域图片
+        allowTaint: false,//允许跨域图片
         backgroundColor:null,
     }
     return posterParams;

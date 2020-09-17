@@ -148,6 +148,12 @@ body {
   padding-left: 0.61rem;
 }
 
+.poster-pic{
+  width: 5.26rem !important;
+  height: 9.33rem !important;
+  margin: 0 auto;
+}
+
 .poster-pic .swiper-slide{
   width: 5.26rem !important;
   height: 9.33rem !important;
@@ -296,35 +302,6 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
-
-/* .poster-bg1{
-  background-image: url('../imgs/poster_bg1.png');
-}
-.poster-bg2{
-  background-image: url('../imgs/poster_bg2.png');
-}
-.poster-bg3{
-  background-image: url('../imgs/poster_bg3.png');
-}
-.poster-bg4{
-  background-image: url('../imgs/poster_bg4.png');
-}
-.poster-bg5{
-  background-image: url('../imgs/poster_bg5.png');
-}
-.poster-bg6{
-  background-image: url('../imgs/poster_bg6.png');
-}
-.poster-bg7{
-  background-image: url('../imgs/poster_bg7.png');
-}
-.poster-bg8{
-  background-image: url('../imgs/poster_bg8.png');
-}
-.poster-bg9{
-  background-image: url('../imgs/poster_bg9.png');
-} */
-
 
 .user-img{
   width: 0.75rem !important;
