@@ -1,473 +1,541 @@
 var posterImgType1 = {
-        list_pic: [{
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/994aadf3ebd92f6fcbb05cbf7d5676c1.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/00d07ad674c041560dc63262755f99cb.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/5440dc0d2220981e79ddf395b84fa1ea.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/fe7dc2dfc0a70c84b9934ff664a511a8.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/75d7d6f7f7187d1a56f2f57966752271.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }],
-        list_npic:[{
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/ea15c387243a73d50293e8033f56aa80.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/8d2c28159c1e46d26ab7b5efd3fbaf9a.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/f9a7e960aaba9a79bd893fb7e6f5c01c.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }, {
-            bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/dfea46a62ea015d7aa809ff0e5e21fe9.png',
-            src: '',
-            isPoster: false,
-            isSecShow: true,
-        }]
-    };
+    list_pic: [{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/994aadf3ebd92f6fcbb05cbf7d5676c1.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    }, {
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/00d07ad674c041560dc63262755f99cb.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    }, {
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/5440dc0d2220981e79ddf395b84fa1ea.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    },
+        // {
+        // bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/fe7dc2dfc0a70c84b9934ff664a511a8.png',
+        // src: '',
+        // isPoster: false,
+        // isSecShow: true,
+        // },
+        {
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/75d7d6f7f7187d1a56f2f57966752271.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+        },
+    ],
+    list_npic:[{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/ea15c387243a73d50293e8033f56aa80.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    }, {
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/8d2c28159c1e46d26ab7b5efd3fbaf9a.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    }, {
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/f9a7e960aaba9a79bd893fb7e6f5c01c.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    }, {
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092815/dfea46a62ea015d7aa809ff0e5e21fe9.png',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    },{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020101509/f4375cb2792424825f1d33b07f23866e.jpg',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    },{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020101509/69e29e15c225462ff10d697d9f8629b7.jpg',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    },{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020101509/1b213d45787ecd9cd0eb6b61d13d4d7e.jpg',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    },{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020101509/36b69aa3e998085bd779b3b52e34a33f.jpg',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    },{
+        bg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020101509/37524a41c2a2003e0d066cc3a10fa280.jpg',
+        src: '',
+        isPoster: false,
+        isSecShow: true,
+    }]
+};
 var typeImgListType1 = [
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_2.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_3.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_4.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_1.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_5.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_6.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_7.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_8.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_9.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_2.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_3.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_4.jpg'},
+// {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_1.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_5.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_6.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_7.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_8.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_9.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_10.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_11.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_12.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_13.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_14.jpg'},
 ];
 var typeImgListType2 = [
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_6.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_7.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_8.jpg'},
-    {src: staticPath + '/front/mobile/v3/img/share2.0/p_type_9.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_6.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_7.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_8.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_9.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_10.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_11.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_12.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_13.jpg'},
+{src: staticPath + '/front/mobile/v3/img/share2.0/p_type_14.jpg'},
 ];
-var posterImg = [];
-var typeImgList = [];
 var ewmImg;
 var shareText;
-var articleImg;
+var courseImage;
 var type;
 var shareUrl;
 $(function () {
-    var noMobile = getCookie("noMobile");
-    if (noMobile != null) {
-        type = $("#type").val();
-        shareTitle = $("#shareTitle").val();
-        shareText = $("#shareText").val();
-        articleImg = $("#articleImg").val();
-        shareUrl = $("#shareUrl").val();
-    }else{
-        type = _getSessionStorage('type');
-        shareTitle = _getSessionStorage('shareTitle');
-        shareText = _getSessionStorage('shareText');
-        articleImg = _getSessionStorage('courseImage');
-        shareUrl = window.location.protocol + "//" + window.location.host + "/admin/shortLink/" + _getSessionStorage('oldUrl');
-    }
+var noMobile = getCookie("noMobile");
+if (noMobile != null) {
+    type = $("#type").val();
+    shareTitle = $("#shareTitle").val();
+    shareText = $("#shareText").val();
+    courseImage = $("#courseImage").val();
+    shareUrl = $("#shareUrl").val();
+}else{
+    type = _getSessionStorage('type');
+    shareTitle = _getSessionStorage('shareTitle');
+    shareText = _getSessionStorage('shareText');
+    courseImage = _getSessionStorage('courseImage');
+    shareUrl = window.location.protocol + "//" + window.location.host + "/admin/shortLink/" + _getSessionStorage('oldUrl');
+}
+if(type == null || type == undefined){
+    type = 1;
+}
+var qrcodeEle = document.querySelector('#qrcode__wrap');
+var qrcode = new QRCode(qrcodeEle, {
+    text: shareUrl,
+    width: 128,
+    height: 128,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
+args = {
+    ele: '.Share',
+    opt: '2 3 4',
+    title : shareTitle,
+    url : shareUrl,
+    reset:true,
+    desc : shareText,
+    img: courseImage
+}
+var vcodeEle = $(qrcodeEle).find('img');
+if (!$("vcodeEle").attr("src")) {
+    var canvas = $(qrcodeEle).find("canvas")[0];
+    ewmImg = canvas.toDataURL("image/png");
+}
 
-    var qrcodeEle = document.querySelector('#qrcode__wrap');
-    var qrcode = new QRCode(qrcodeEle, {
-        text: shareUrl,
-        width: 128,
-        height: 128,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
-    args = {
-        ele: '.Share',
-        opt: '2 3 4',
-        title : Zepto('#courseName').text(),
-        lookNum : Zepto('#lookNum').val(),
-        url : window.location.href,
-        reset:true,
-        desc : desc,
-        img:''
-    }
-    var vcodeEle = $(qrcodeEle).find('img');
-    if (!$("vcodeEle").attr("src")) {
-        var canvas = $(qrcodeEle).find("canvas")[0];
-        ewmImg = canvas.toDataURL("image/png");
-    }
-
-    onload();
-    $('body').on('click', '#copyUrl', function () {
-        copyText(shareUrl);
-        Zepto.toast('¸´ÖÆ³É¹¦');
-    }).on('click', '#btn', function () {
-        if(isWeiXin()){
-            t.opWx(t.args);
-            Zepto('#prompt').css("display","block").click(function () {
-                Zepto(this).css("display","none");
-                Zepto('body').css('overflow', 'inherit')
-            });
-            Zepto('body').css('overflow', 'hidden')
-        }else{
-            Zepto('#prompt1').css("display","block").click(function () {
-                Zepto(this).css("display","none");
-                Zepto('body').css('overflow', 'inherit')
-            });
-            Zepto('body').css('overflow', 'hidden')
-        }
-
-    });
+onload();
 })
-
 function onload() {
-    new Vue({
-        el: "#app",
-        data: {
-            loading: true,
-            swiperIndex: 0,
-            avatar: $("#avatar").val(),
-            userName: $("#userName").val(),
-            shareTitle: shareTitle,
-            articleImg: articleImg,
-            shareText: shareText,
-            ewmImg: ewmImg,
-            zwmImg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092816/592412d2749eb908b3736d93f412965f.png',
-            eduText: $("#eduText").val(),
-            compangLogo: $("#compangLogo").val(),
-            companyText: $("#companyText").val(),
-            posterImg: posterImgType1,
-            typeImgList1: typeImgListType1,
-            typeImgList2: typeImgListType2,
-            type: type || 1,
-            shareUrl: shareUrl,
-            args: args
-        },
-        created() {
+new Vue({
+    el: "#app",
+    data: {
+        loading: true,
+        swiperIndex: 0,
+        avatar: $("#avatar").val(),
+        userName: $("#userName").val(),
+        shareTitle: shareTitle,
+        courseImage: courseImage,
+        shareText: shareText,
+        ewmImg: ewmImg,
+        zwmImg: 'https://static.268xue.com/upload/zaieh0ueuio/0/yzl/common/2020092816/592412d2749eb908b3736d93f412965f.png',
+        eduText: $("#eduText").val(),
+        compangLogo: 'https://fimage.268xue.com/upload/0/yzl/common/2020092313/021cd9fb4df5b25f0f2ecfd0ee7df0e9.png',
+        companyText: $("#companyText").val(),
+        posterImg: posterImgType1,
+        typeImgList1: typeImgListType1,
+        typeImgList2: typeImgListType2,
+        type: type,
+        shareUrl: shareUrl,
+        args: args
+    },
+    created() {
+        let that = this;
+    },
+    mounted() {
+        let that = this;
+        that.posterTemp();
+        posterCanvas(this, 0);
+        // posterCanvas1(this);
+    },
+    methods: {
+        posterTemp() {
             let that = this;
-        },
-        mounted() {
-            let that = this;
-            that.posterTemp();
-            posterCanvas(this, 0);
-            // posterCanvas1(this);
-        },
-        methods: {
-            posterTemp() {
-                let that = this;
-                let posterTemp = new Swiper('.poster-temp', {
-                    spaceBetween: 5,
-                    slidesPerView: 4.2,
-                    freeMode: true,
-                    watchSlidesVisibility: true,
-                    watchSlidesProgress: true,
-                    on: {
-                        click: function () {
-                            that.loading = true;
-                            let index = this.clickedIndex;
-                            if(index){
-                                posterCanvas(that, index);
-                            }else{
-                                that.loading = false;
-                            }
+            let posterTemp = new Swiper('.poster-temp', {
+                spaceBetween: 5,
+                slidesPerView: 4.2,
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+                on: {
+                    click: function () {
+                        that.loading = true;
+                        let index = this.clickedIndex;
+                        if(index){
+                            posterCanvas(that, index);
+                        }else{
+                            that.loading = false;
                         }
                     }
-                });
-                //ÂÖ²¥Í¼ÇĞ»»
-                let posterPic = new Swiper('.poster-pic', {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-                    centeredSlides: true,
-                    thumbs: {
-                        swiper: posterTemp
-                    },
-                });
-            },
+                }
+            });
+            //è½®æ’­å›¾åˆ‡æ¢
+            let posterPic = new Swiper('.poster-pic', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                centeredSlides: true,
+                thumbs: {
+                    swiper: posterTemp
+                },
+            });
+        },
 
-            //¸´ÖÆÁ´½Ó
-            copyPath(){
-                let that = this;
-                copyText(that.shareUrl);
-                Zepto.toast('¸´ÖÆ³É¹¦');
-            },
+        //å¤åˆ¶é“¾æ¥
+        copyPath(){
+            var noMobile = getCookie("noMobile");
+            if (noMobile != null) {
+                if(noMobile == "1"){
+                    android.copyPath(JSON.stringify({shareUrl:shareUrl}));
+                }else{
+                    window.webkit.messageHandlers.copyPath.postMessage(shareUrl);
+                }
+                return
+            }
+            let that = this;
+            copyText(that.shareUrl);
+            Zepto.toast('å¤åˆ¶æˆåŠŸ');
+        },
 
-            //·ÖÏíÎ¢ĞÅ
-            shareWxPath(){
-                let that = this;
-                that.opWx(that.args);
-                addShareTips();
+        //åˆ†äº«å¾®ä¿¡
+        shareWxPath(){
+            var noMobile = getCookie("noMobile");
+            if (noMobile != null) {
+                if(noMobile == "1"){
+                    android.shareWxPath("");
+                }else{
+                    window.webkit.messageHandlers.shareWxPath.postMessage("");
+                }
+                return
+            }
+            let that = this;
+            addShareTips();
+            that.opWx(that.args);
+            let viewer = window.navigator.userAgent.toLowerCase();
+            if(viewer.match(/MicroMessenger/i) == 'micromessenger'){
                 Zepto('#prompt').css("display","block").click(function () {
                     Zepto(this).css("display","none");
                     Zepto('body').css('overflow', 'inherit')
                 });
-                Zepto('body').css('overflow', 'hidden')
-            },
+            }else{
+                Zepto('#prompt1').css("display","block").click(function () {
+                    Zepto(this).css("display","none");
+                    Zepto('body').css('overflow', 'inherit')
+                });
+            }
+            Zepto('body').css('overflow', 'hidden')
+        },
 
-            //QQ·ÖÏí
-            shareQQPath(){
-                let that = this;
-                opQQ(that);
-            },
-
-            opWx: function (obj) {    //Ñ¡Ôñwx
-                //ÅĞ¶ÏÊÇ·ñĞèÒª´ÓĞÂ³õÊ¼»¯Î¢ĞÅ·ÖÏí
-                if(obj.reset!=undefined&&obj.reset!=null&&obj.reset!=""&&obj.reset){
-                    wxShare(obj);
+        //QQåˆ†äº«
+        shareQQPath(){
+            var noMobile = getCookie("noMobile");
+            if (noMobile != null) {
+                if(noMobile == "1"){
+                    android.shareQQPath("");
+                }else{
+                    window.webkit.messageHandlers.shareQQPath.postMessage("");
                 }
-            },
-        }
-    });
+                return
+            }
+            let that = this;
+            opQQ(that);
+        },
+        opWx: function (obj) {    //é€‰æ‹©wx
+            //åˆ¤æ–­æ˜¯å¦éœ€è¦ä»æ–°åˆå§‹åŒ–å¾®ä¿¡åˆ†äº«
+            if(obj.reset!=undefined&&obj.reset!=null&&obj.reset!=""&&obj.reset){
+                wxShare(obj);
+            }
+        },
+    }
+});
 };
 
 function posterCanvas(that, index) {
-    if (that.type == 1 ? (index < 5 ? that.posterImg.list_pic[index].isPoster : that.posterImg.list_npic[index-5].isPoster) : that.posterImg.list_npic[index].isPoster) {
-        that.loading = false;return
-    }
-    baseImg(that, index);
-    let targetDom = that.type == 1 ? document.getElementById('bs-poster-'+ index ) : document.getElementById('bs-poster-'+ index + 'A');
-    let posterParams = ImgParams(index, that);
-    setTimeout(() => {
-        html2canvas(targetDom, posterParams).then(canvas => {
-            if(that.type == 1 ){
-                if(index < 5){
-                    that.posterImg.list_pic[index].src = canvas.toDataURL("image/png", 1);  // µ¼³öÍ¼Æ¬
-                    that.posterImg.list_pic[index].isSecShow = false;
-                    that.posterImg.list_pic[index].isPoster = true;
-                }else{
-                    that.posterImg.list_npic[index-5].src = canvas.toDataURL("image/png", 1);  // µ¼³öÍ¼Æ¬
-                    that.posterImg.list_npic[index-5].isSecShow = false;
-                    that.posterImg.list_npic[index-5].isPoster = true;
-                }
-            }else {
-                that.posterImg.list_npic[index].src = canvas.toDataURL("image/png", 1);  // µ¼³öÍ¼Æ¬
-                that.posterImg.list_npic[index].isSecShow = false;
-                that.posterImg.list_npic[index].isPoster = true;
-            }
-            that.loading = false;
-        }).catch((error) => {
-            console.log(error)
-            that.loading = false;
-        })
-    }, 500)
+console.log(index)
+if (that.type == 1 ? (index < that.posterImg.list_pic.length ? that.posterImg.list_pic[index].isPoster : that.posterImg.list_npic[index-(that.posterImg.list_pic.length)].isPoster) : that.posterImg.list_npic[index].isPoster) {
+    that.loading = false;return
 }
-
-// »ñÈ¡id canvas²ÎÊı
-function ImgParams(index, that) {
-    let targetDom = that.type == 1 ? document.getElementById('bs-poster-'+ index ) : document.getElementById('bs-poster-'+ index + 'A');
-    console.log(targetDom)
-    // ´´½¨Ò»¸öĞÂµÄcanvas
-    const Canvas = document.createElement('canvas');
-    const width = targetDom.offsetWidth;  //ÉèÖÃcanvas³ß´çÓëËù½ØÍ¼³ß´çÏàÍ¬£¬·ÀÖ¹°×±ß
-    const height = targetDom.offsetHeight;  //ÉèÖÃcanvas³ß´çÓëËù½ØÍ¼³ß´çÏàÍ¬£¬·ÀÖ¹°×±ß
-    const scale = 4;  // ·Å´ó±¶Êı
-    // ½«Canvas»­²¼·Å´óscale±¶£¬È»ºó·ÅÔÚĞ¡µÄÆÁÄ»Àï£¬½â¾öÄ£ºıÎÊÌâ
-    Canvas.width = width * scale;
-    Canvas.height = height * scale;
-    Canvas.getContext('2d').scale(scale, scale);
-    //ÉèÖÃcontextÎ»ÖÃ£¬ÖµÎªÏà¶ÔÓÚÊÓ´°µÄÆ«ÒÆÁ¿¸ºÖµ£¬ÈÃÍ¼Æ¬¸´Î»(½â¾öÆ«ÒÆµÄÖØµã)
-    var rect = document.getElementById('posterPic').getBoundingClientRect();//»ñÈ¡ÔªËØÏà¶ÔÓÚÊÓ²ìµÄÆ«ÒÆÁ¿
-    Canvas.getContext('2d').translate(-rect.left, -rect.top);
-    let posterParams = {
-        canvas: Canvas,
-        scale,
-        width: width, //ÉèÖÃcanvas³ß´çÓëËù½ØÍ¼³ß´çÏàÍ¬£¬·ÀÖ¹°×±ß
-        height: height, //ÉèÖÃcanvas³ß´çÓëËù½ØÍ¼³ß´çÏàÍ¬£¬·ÀÖ¹°×±ß
-        useCORS: true, // ¡¾ÖØÒª¡¿¿ªÆô¿çÓòÅäÖÃ
-    }
-    return posterParams;
-}
-
-//½«Í¼Æ¬×ª»»Îªbase64
-function baseImg(that, index) {
-    //·ÀÖ¹ÆÁÄ»Ğ¡Ôì³É¹ö¶¯£¬º£±¨²úÉú°×ÆÁ
-    window.pageYOffset = 0;
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-    //´¦Àí±êÌâ£¬µ±´óÓÚÈıĞĞµÄÊ±ºò£¬±äÎª..
-    let titleArray = that.shareTitle.split("");
-    if (titleArray.length >= 21) {
-        that.shareTitle = that.shareTitle.slice(0, 19) + '...';
-    }
-}
-
-//ÊµÏÖ½«ÏîÄ¿µÄÍ¼Æ¬×ª»¯³Ébase64
-function base64TransformByURL(url) {
-    function getBase64Image(img) {
-        var canvas = document.createElement('CANVAS');
-        var ctx = canvas.getContext('2d');
-        canvas.height = img.height;
-        canvas.width = img.width;
-        ctx.drawImage(img, 0, 0);
-        let base64 = canvas.toDataURL('image/png');
-        return base64;
-    }
-
-    return new Promise(function (resolve, reject) {
-        const image = new Image;
-        image.crossOrigin = 'Anonymous';
-        image.onload = function () {
-            resolve(getBase64Image(image));
-        };
-        image.src = url;
-    })
-}
-
-/**¸´ÖÆÎÄ±¾ */
-function copyText(node) {
-    if (!node) {
-        return;
-    }
-    var result;
-    var tempTextarea = document.createElement('textarea');
-    document.body.appendChild(tempTextarea);
-    if (typeof(node) == 'object') {
-        if (node.value) {
-            tempTextarea.value = node.value;
-        } else {
-            tempTextarea.value = node.innerHTML;
-        }
-    } else {
-        tempTextarea.value = node;
-    }
-    var u = navigator.userAgent;
-    if (u.match(/(iPhone|iPod|iPad);?/i)) {
-        window.getSelection().removeAllRanges();
-        var range = document.createRange();
-        range.selectNode(tempTextarea);
-        window.getSelection().addRange(range);
-        result = document.execCommand('copy');
-        window.getSelection().removeAllRanges();
-    } else {
-        tempTextarea.select();
-        result = document.execCommand('Copy');
-    }
-    // ÒÆ³ıÁÙÊ±ÎÄ±¾Óò
-    document.body.removeChild(tempTextarea);
-    return result;
-}
-
-//Î¢ĞÅ·ÖÏí
-function wxShare(shareData){
-    $.ajax({
-        url: baseloaction +'/mobile/share/WeChatSignature',
-        type:'post',
-        dataType:'json',
-        data:{
-            "url":location.href
-        },
-        success:function (result) {
-            if(result.success){
-                var entity = result.entity;
-                if (entity.signature != null) {
-                    // ÅäÖÃ
-                    wx.config({
-                        debug: false,   // ²âÊÔ½×¶Î£¬¿ÉÒÔĞ´Îªtrue£¬Ö÷ÒªÊÇÎªÁË²âÊÔÊÇ·ñÅäÖÃ³É¹¦
-                        appId: entity.appId,
-                        timestamp: entity.timestamp,
-                        nonceStr: entity.nonceStr,
-                        signature: entity.signature,
-                        //onMenuShareTimeline ·ÖÏíµ½ÅóÓÑÈ¦
-                        //onMenuShareAppMessage ·ÖÏí¸øÅóÓÑ
-                        jsApiList: ['updateAppMessageShareData','updateTimelineShareData']
-                    });
-                    wx.ready(function() {
-                        //¡°·ÖÏí¸øÅóÓÑ¡±°´Å¥µÄ·ÖÏíÄÚÈİ
-                        wx.updateAppMessageShareData({
-                            title: shareData.title, // ·ÖÏí±êÌâ
-                            desc: shareData.desc, // ·ÖÏíÃèÊö
-                            link: shareData.url, // ·ÖÏíÁ´½Ó£¬¸ÃÁ´½ÓÓòÃû»òÂ·¾¶±ØĞëÓëµ±Ç°Ò³Ãæ¶ÔÓ¦µÄ¹«ÖÚºÅJS°²È«ÓòÃûÒ»ÖÂ
-                            imgUrl: shareData.img, // ·ÖÏíÍ¼±ê
-                            success: function () {
-
-                            },
-                            fail:function (res) {
-                                console.dir(res);
-                            }
-                        });
-                        //¡°·ÖÏíµ½ÅóÓÑÈ¦¡±°´Å¥µÄ·ÖÏíÄÚÈİ
-                        wx.updateTimelineShareData({
-                            title: shareData.title, // ·ÖÏí±êÌâ
-                            link: shareData.url, // ·ÖÏíÁ´½Ó£¬¸ÃÁ´½ÓÓòÃû»òÂ·¾¶±ØĞëÓëµ±Ç°Ò³Ãæ¶ÔÓ¦µÄ¹«ÖÚºÅJS°²È«ÓòÃûÒ»ÖÂ
-                            imgUrl: shareData.img, // ·ÖÏíÍ¼±ê
-                            success: function () {
-
-                            },
-                            fail:function (res) {
-                                console.dir(res);
-                            }
-                        });
-                        wx.error(function(res) {
-                            console.dir(res);
-                            console.log(res.errMsg);
-                        });
-                    });
-                }else{
-                    console.log('Î¢ĞÅÔİÊ±ÎŞ·¨½øĞĞ·ÖÏí');
-                }
-
+baseImg(that, index);
+let targetDom = that.type == 1 ? document.querySelector('#bs-poster-'+ index ) : document.querySelector('#bs-poster-'+ index + 'A');
+let posterParams = ImgParams(index, that);
+setTimeout(() => {
+    html2canvas(targetDom, posterParams).then(canvas => {
+        if(that.type == 1 ){
+            if(index < (that.posterImg.list_pic.length)){
+                that.posterImg.list_pic[index].src = canvas.toDataURL("image/png", 1);  // å¯¼å‡ºå›¾ç‰‡
+                that.posterImg.list_pic[index].isSecShow = false;
+                that.posterImg.list_pic[index].isPoster = true;
             }else{
-                console.log('Î¢ĞÅÔİÊ±ÎŞ·¨½øĞĞ·ÖÏí');
+                that.posterImg.list_npic[index-(that.posterImg.list_pic.length)].src = canvas.toDataURL("image/png", 1);  // å¯¼å‡ºå›¾ç‰‡
+                that.posterImg.list_npic[index-(that.posterImg.list_pic.length)].isSecShow = false;
+                that.posterImg.list_npic[index-(that.posterImg.list_pic.length)].isPoster = true;
             }
-
-        },
-        error:function (error) {
+        }else {
+            that.posterImg.list_npic[index].src = canvas.toDataURL("image/png", 1);  // å¯¼å‡ºå›¾ç‰‡
+            that.posterImg.list_npic[index].isSecShow = false;
+            that.posterImg.list_npic[index].isPoster = true;
         }
-    });
+        that.loading = false;
+        if(index < that.posterImg.length){
+            posterCanvas(this, index + 1);
+        }
+
+    }).catch((error) => {
+        console.log(error)
+        that.loading = false;
+    })
+}, 500)
 }
 
-function opQQ(that) {    //Ñ¡Ôñqq
+// è·å–id canvaså‚æ•°
+function ImgParams(index, that) {
+let targetDom = that.type == 1 ? document.querySelector('#bs-poster-'+ index ) : document.querySelector('#bs-poster-'+ index + 'A');
+console.log(targetDom)
+// åˆ›å»ºä¸€ä¸ªæ–°çš„canvas
+const Canvas = document.createElement('canvas');
+const width = targetDom.offsetWidth;  //è®¾ç½®canvaså°ºå¯¸ä¸æ‰€æˆªå›¾å°ºå¯¸ç›¸åŒï¼Œé˜²æ­¢ç™½è¾¹
+const height = targetDom.offsetHeight;  //è®¾ç½®canvaså°ºå¯¸ä¸æ‰€æˆªå›¾å°ºå¯¸ç›¸åŒï¼Œé˜²æ­¢ç™½è¾¹
+const scale = 4;  // æ”¾å¤§å€æ•°
+// å°†Canvasç”»å¸ƒæ”¾å¤§scaleå€ï¼Œç„¶åæ”¾åœ¨å°çš„å±å¹•é‡Œï¼Œè§£å†³æ¨¡ç³Šé—®é¢˜
+Canvas.width = width * scale;
+Canvas.height = height * scale;
+Canvas.getContext('2d').scale(scale, scale);
+//è®¾ç½®contextä½ç½®ï¼Œå€¼ä¸ºç›¸å¯¹äºè§†çª—çš„åç§»é‡è´Ÿå€¼ï¼Œè®©å›¾ç‰‡å¤ä½(è§£å†³åç§»çš„é‡ç‚¹)
+var rect = document.getElementById('posterPic').getBoundingClientRect();//è·å–å…ƒç´ ç›¸å¯¹äºè§†å¯Ÿçš„åç§»é‡
+Canvas.getContext('2d').translate(-rect.left, -rect.top);
+let posterParams = {
+    canvas: Canvas,
+    scale,
+    width: width, //è®¾ç½®canvaså°ºå¯¸ä¸æ‰€æˆªå›¾å°ºå¯¸ç›¸åŒï¼Œé˜²æ­¢ç™½è¾¹
+    height: height, //è®¾ç½®canvaså°ºå¯¸ä¸æ‰€æˆªå›¾å°ºå¯¸ç›¸åŒï¼Œé˜²æ­¢ç™½è¾¹
+    useCORS: true, // ã€é‡è¦ã€‘å¼€å¯è·¨åŸŸé…ç½®
+    allowTaint: false,
+}
+return posterParams;
+}
 
-    var p = {
-        url: this.url,
-        showcount: '0', /*ÊÇ·ñÏÔÊ¾·ÖÏí×ÜÊı,ÏÔÊ¾£º'1'£¬²»ÏÔÊ¾£º'0' */
-        desc: this.desc, /*Ä¬ÈÏ·ÖÏíÀíÓÉ(¿ÉÑ¡)*/
-        title: that.args.title, /*·ÖÏí±êÌâ(¿ÉÑ¡)*/
-        pics: this.img, /*·ÖÏíÍ¼Æ¬µÄÂ·¾¶(¿ÉÑ¡)*/
-        style: '203',
-        width: 98,
-        height: 22
+//å°†å›¾ç‰‡è½¬æ¢ä¸ºbase64
+function baseImg(that, index) {
+//é˜²æ­¢å±å¹•å°é€ æˆæ»šåŠ¨ï¼Œæµ·æŠ¥äº§ç”Ÿç™½å±
+window.pageYOffset = 0;
+document.documentElement.scrollTop = 0
+document.body.scrollTop = 0
+
+//å¤„ç†æ ‡é¢˜ï¼Œå½“å¤§äºä¸‰è¡Œçš„æ—¶å€™ï¼Œå˜ä¸º..
+let titleArray = that.shareTitle.split("");
+if (titleArray.length >= 21) {
+    that.shareTitle = that.shareTitle.slice(0, 19) + '...';
+}
+}
+
+//å®ç°å°†é¡¹ç›®çš„å›¾ç‰‡è½¬åŒ–æˆbase64
+function base64TransformByURL(url) {
+function getBase64Image(img) {
+    var canvas = document.createElement('CANVAS');
+    var ctx = canvas.getContext('2d');
+    canvas.height = img.height;
+    canvas.width = img.width;
+    ctx.drawImage(img, 0, 0);
+    let base64 = canvas.toDataURL('image/png');
+    return base64;
+}
+
+return new Promise(function (resolve, reject) {
+    const image = new Image;
+    image.crossOrigin = 'Anonymous';
+    image.onload = function () {
+        resolve(getBase64Image(image));
     };
-    var s = [];
-    for (var i in p) {
-        s.push(i + '=' + encodeURIComponent(p[i] || ''));
+    image.src = url;
+})
+}
+
+/**å¤åˆ¶æ–‡æœ¬ */
+function copyText(node) {
+if (!node) {
+    return;
+}
+var result;
+var tempTextarea = document.createElement('textarea');
+document.body.appendChild(tempTextarea);
+if (typeof(node) == 'object') {
+    if (node.value) {
+        tempTextarea.value = node.value;
+    } else {
+        tempTextarea.value = node.innerHTML;
     }
-    window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?' + s.join('&'));
+} else {
+    tempTextarea.value = node;
+}
+var u = navigator.userAgent;
+if (u.match(/(iPhone|iPod|iPad);?/i)) {
+    window.getSelection().removeAllRanges();
+    var range = document.createRange();
+    range.selectNode(tempTextarea);
+    window.getSelection().addRange(range);
+    result = document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+} else {
+    tempTextarea.select();
+    result = document.execCommand('Copy');
+}
+// ç§»é™¤ä¸´æ—¶æ–‡æœ¬åŸŸ
+document.body.removeChild(tempTextarea);
+return result;
+}
+
+//å¾®ä¿¡åˆ†äº«
+function wxShare(shareData){
+$.ajax({
+    url: baseloaction +'/mobile/share/WeChatSignature',
+    type:'post',
+    dataType:'json',
+    data:{
+        "url":location.href
+    },
+    success:function (result) {
+        if(result.success){
+            var entity = result.entity;
+            if (entity.signature != null) {
+                // é…ç½®
+                wx.config({
+                    debug: false,   // æµ‹è¯•é˜¶æ®µï¼Œå¯ä»¥å†™ä¸ºtrueï¼Œä¸»è¦æ˜¯ä¸ºäº†æµ‹è¯•æ˜¯å¦é…ç½®æˆåŠŸ
+                    appId: entity.appId,
+                    timestamp: entity.timestamp,
+                    nonceStr: entity.nonceStr,
+                    signature: entity.signature,
+                    //onMenuShareTimeline åˆ†äº«åˆ°æœ‹å‹åœˆ
+                    //onMenuShareAppMessage åˆ†äº«ç»™æœ‹å‹
+                    jsApiList: ['updateAppMessageShareData','updateTimelineShareData']
+                });
+                wx.ready(function() {
+                    //â€œåˆ†äº«ç»™æœ‹å‹â€æŒ‰é’®çš„åˆ†äº«å†…å®¹
+                    wx.updateAppMessageShareData({
+                        title: shareData.title, // åˆ†äº«æ ‡é¢˜
+                        desc: shareData.desc, // åˆ†äº«æè¿°
+                        link: shareData.url, // åˆ†äº«é“¾æ¥ï¼Œè¯¥é“¾æ¥åŸŸåæˆ–è·¯å¾„å¿…é¡»ä¸å½“å‰é¡µé¢å¯¹åº”çš„å…¬ä¼—å·JSå®‰å…¨åŸŸåä¸€è‡´
+                        imgUrl: shareData.img, // åˆ†äº«å›¾æ ‡
+                        success: function () {
+
+                        },
+                        fail:function (res) {
+                            console.dir(res);
+                        }
+                    });
+                    //â€œåˆ†äº«åˆ°æœ‹å‹åœˆâ€æŒ‰é’®çš„åˆ†äº«å†…å®¹
+                    wx.updateTimelineShareData({
+                        title: shareData.title, // åˆ†äº«æ ‡é¢˜
+                        link: shareData.url, // åˆ†äº«é“¾æ¥ï¼Œè¯¥é“¾æ¥åŸŸåæˆ–è·¯å¾„å¿…é¡»ä¸å½“å‰é¡µé¢å¯¹åº”çš„å…¬ä¼—å·JSå®‰å…¨åŸŸåä¸€è‡´
+                        imgUrl: shareData.img, // åˆ†äº«å›¾æ ‡
+                        success: function () {
+
+                        },
+                        fail:function (res) {
+                            console.dir(res);
+                        }
+                    });
+                    wx.error(function(res) {
+                        console.dir(res);
+                        console.log(res.errMsg);
+                    });
+                });
+            }else{
+                console.log('å¾®ä¿¡æš‚æ—¶æ— æ³•è¿›è¡Œåˆ†äº«');
+            }
+        }else{
+            console.log('å¾®ä¿¡æš‚æ—¶æ— æ³•è¿›è¡Œåˆ†äº«');
+        }
+    },
+    error:function (error) {
+    }
+});
+}
+
+function opQQ(that) {    //é€‰æ‹©qq
+var p = {
+    url: this.url,
+    showcount: '0', /*æ˜¯å¦æ˜¾ç¤ºåˆ†äº«æ€»æ•°,æ˜¾ç¤ºï¼š'1'ï¼Œä¸æ˜¾ç¤ºï¼š'0' */
+    desc: this.desc, /*é»˜è®¤åˆ†äº«ç†ç”±(å¯é€‰)*/
+    title: that.args.title, /*åˆ†äº«æ ‡é¢˜(å¯é€‰)*/
+    pics: this.img, /*åˆ†äº«å›¾ç‰‡çš„è·¯å¾„(å¯é€‰)*/
+    style: '203',
+    width: 98,
+    height: 22
+};
+var s = [];
+for (var i in p) {
+    s.push(i + '=' + encodeURIComponent(p[i] || ''));
+}
+window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?' + s.join('&'));
 }
 
 function addShareTips(){
-    var prompt = Zepto("#prompt");
-    if(prompt==null||prompt==undefined||prompt.length==0){
-        var html = '<section id="prompt" style="display: none;">' +
-            '    <div class="prompt_bg"></div>' +
-            '    <div class="shareArrow"><em class="arrow-right-top"></em></div>' +
-            '    <div class="sharePrompt">' +
-            '        <p>µã»÷ÓÒÉÏ½Ç£¬·ÖÏí¸øÅóÓÑ/ÈºÁÄ</p>' +
-            '    </div>' +
-            '</section>' +
-            '' +
-            '<section id="prompt1" style="display: none;">' +
-            '    <div class="prompt_bg"></div>' +
-            '    <div class="sharePrompt">' +
-            '        <p>ä¯ÀÀÆ÷Ôİ²»Ö§³Ö£¬Çëµ½Î¢ĞÅÖĞ·ÖÏí</p>' +
-            '    </div>' +
-            '</section>';
-        Zepto('body').append(html);
+var prompt = Zepto("#prompt");
+if(prompt==null||prompt==undefined||prompt.length==0){
+    var html = '<section id="prompt" style="display: none;">' +
+        '    <div class="prompt_bg"></div>' +
+        '    <div class="shareArrow"><em class="arrow-right-top"></em></div>' +
+        '    <div class="sharePrompt">' +
+        '        <p>ç‚¹å‡»å³ä¸Šè§’ï¼Œåˆ†äº«ç»™æœ‹å‹/ç¾¤èŠ</p>' +
+        '    </div>' +
+        '</section>' +
+        '' +
+        '<section id="prompt1" style="display: none;">' +
+        '    <div class="prompt_bg"></div>' +
+        '    <div class="sharePrompt">' +
+        '        <p>æµè§ˆå™¨æš‚ä¸æ”¯æŒï¼Œè¯·åˆ°å¾®ä¿¡ä¸­åˆ†äº«</p>' +
+        '    </div>' +
+        '</section>';
+    Zepto('body').append(html);
+}
+}
+
+function goBack(){
+var  noMobile  = getCookie("noMobile");
+if(noMobile!=null){
+    if (noMobile == "1" ){
+        android.goBack();
     }
+    if( noMobile == "2") {
+        window.webkit.messageHandlers.goBack.postMessage("");
+    }
+    return true;
+}
+window.history.go(-1);
 }
 
 

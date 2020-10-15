@@ -70,10 +70,10 @@ body {
   animation: preloader-spin 1s steps(12,end) infinite;
 }
 
-/* 标题 */
+/* 鏍囬 */
 .bs-review__wrap{
   width: 100%;
-  height: calc(100% - 4.12rem);
+  height: calc(100% - 3.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,7 +107,7 @@ body {
   white-space: nowrap;
 }
 
-/* 海报内容 */
+/* 娴锋姤鍐呭 */
 .swiper-container {
   width: 100%;
   /* height: 100%; */
@@ -136,12 +136,13 @@ body {
   box-sizing: content-box;
 }
 
-.poster-temp{
+.swiper-container.poster-temp{
   width: 100%;
-  height: 1.92rem;
+  height: 1.7rem !important;
   position: fixed;
   left: 0;
-  bottom: 2.2rem;
+  bottom: 1.7rem;
+  min-height: 1.7rem;
 }
 
 .poster-temp .swiper-wrapper{
@@ -149,8 +150,8 @@ body {
 }
 
 .poster-pic .swiper-slide{
-  width: 5.26rem !important;
-  height: 9.33rem !important;
+  width: 7.2rem !important;
+  height: 12.8rem !important;
   /* width: 5rem !important;
   height: 8.91rem !important; */
   opacity: 0;
@@ -158,8 +159,8 @@ body {
 }
 
 .poster-temp .swiper-slide{
-  width: 1.92rem !important;
-  height: 1.92rem !important;
+  width: 1.6rem !important;
+  height: 1.6rem !important;
   border-radius: 100%;
   /* opacity: 0.4; */
   overflow: hidden;
@@ -210,7 +211,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.33rem 0 0.56rem;
+  margin: 0.33rem 0 0;
 }
 
 .save-icon{
@@ -228,7 +229,7 @@ body {
 
 .bs-footer{
   width: 100%;
-  height: 2rem;
+  height: 1.5rem;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -238,7 +239,7 @@ body {
 
 .btm-box{
   width: 33.3%;
-  height: 2rem;
+  height: 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -248,17 +249,18 @@ body {
 }
 
 .btm-box .btm-icon {
-  width: 0.85rem;
-  height: 0.85rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 100%;
-  margin-top: 0.24rem;
+  margin-top: 0.12rem;
 }
 
 .btm-box .btn-sec{
   width: 100%;
-  font-size: 0.35rem;
+  font-size: 0.32rem;
   border: 0;
   background: rgba(0,0,0,0);
+  margin-top: -5px;
 }
 
 .bs-poster-bg{
@@ -271,11 +273,15 @@ body {
   bottom: 0;
 }
 
-/** 海报类型一 */
+/** 娴锋姤绫诲瀷涓� */
 .bs-poster {
   width: 100%;
   height: 100%;
   position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .poster-img{
@@ -301,39 +307,10 @@ body {
   background-repeat: no-repeat;
 }
 
-/* .poster-bg1{
-  background-image: url('../imgs/poster_bg1.png');
-}
-.poster-bg2{
-  background-image: url('../imgs/poster_bg2.png');
-}
-.poster-bg3{
-  background-image: url('../imgs/poster_bg3.png');
-}
-.poster-bg4{
-  background-image: url('../imgs/poster_bg4.png');
-}
-.poster-bg5{
-  background-image: url('../imgs/poster_bg5.png');
-}
-.poster-bg6{
-  background-image: url('../imgs/poster_bg6.png');
-}
-.poster-bg7{
-  background-image: url('../imgs/poster_bg7.png');
-}
-.poster-bg8{
-  background-image: url('../imgs/poster_bg8.png');
-}
-.poster-bg9{
-  background-image: url('../imgs/poster_bg9.png');
-} */
-
-
 .user-img{
-  width: 0.75rem !important;
-  height: 0.75rem;
-  margin: 1.68rem auto 0;
+  width: 1.02rem !important;
+  height: 1.02rem;
+  margin: 2.3rem auto 0;
   border-radius: 100%;
   background-size: 100% 100%;
   background-position: center center;
@@ -341,74 +318,65 @@ body {
 }
 
 .user-img3{
-  margin: 1.8rem auto 0;
+  margin: 2.47rem auto 0;
 }
 
 .user-name{
   width: 100%;
-  font-size: 0.33rem;
-  transform: scale(0.7);
-  margin: 0;
-  margin-top: -0.04rem;
+  font-size: 0.4rem;
+  margin: 0.1rem 0 0;
 }
 
 .user-study{
   width: 100%;
-  font-size: 0.33rem;
-  transform: scale(0.5);
+  font-size: 0.32rem;
   color: #7a7a7a;
   margin: 0;
-  margin-top: -0.05rem;
-  line-height: 0.17rem;
 }
 
 .poster-title{
-  width: 4.05rem;
-  margin: 0.31rem auto 0;
-  font-size: 0.3rem;
+  width: 5.55rem;
+  margin: 0.4rem auto 0;
+  font-size: 0.42rem;
   /*height: 1rem;*/
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
-
+.btm-box
 .poster-title3{
-  margin: 0.85rem auto 0;
+  margin: 1.16rem auto 0;
 }
 
 .poster-text{
-  font-size: 0.33rem;
-  transform: scale(0.5);
+  font-size: 12px;
+  /*transform: scale(0.5);*/
   color: #7f7f7f;
   margin: 0 auto;
-  margin-top: -0.1rem;
 }
 
 .poster-secpic{
-  width: 2.95rem !important;
-  height: 1.65rem;
+  width: 4.04rem !important;
+  height: 2.26rem;
   border-radius: 6px;
-  margin: 0.11rem auto 0;
+  margin: 0.25rem auto 0;
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .poster-secpic.poster-secpic3{
-  margin: 0.28rem auto 0;
+  margin: 0.38rem auto 0;
 }
 
 .edu-form{
-  height: 0.18rem;
-  margin: -0.21rem auto 0;
-  font-size: 0.33rem;
-  transform: scale(0.5);
+  margin: 0.22rem auto 0;
+  font-size: 0.32rem;
   color: #888888;
   position: relative;
   display: inline-block;
 }
-/* 
+/*
 .edu-form::before{
   content: '';
   width: 6px;
@@ -432,29 +400,29 @@ body {
 } */
 
 .edu-form.edu-form5{
-  margin: -1.45rem auto 0;
+  margin: 2.45rem auto 0;
 }
 
 .share-box{
-  width: 2.35rem;
-  height: 1.02rem;
-  margin: 0.20rem auto 0;
+  width: 3.22rem;
+  height: 1.40rem;
+  margin: 0.27rem auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .share-ewm{
-  width: 0.975rem !important;
-  height: 0.975rem;
+  width: 1.34rem !important;
+  height: 1.34rem;
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .share-zwm {
-  width: 1rem !important;
-  height: 1rem;
+  width: 1.37rem !important;
+  height: 1.37rem;
   /* background-image: url('../imgs/zwm-icon.png'); */
   background-size: 100% 100%;
   background-position: center center;
@@ -462,132 +430,133 @@ body {
 }
 
 .share-ewm6{
-  margin: 1.89rem 0 0 1.5rem;
+  margin: 2.59rem 0 0 2.05rem;
 }
 
 .company-logo{
   width: 100%;
   position: absolute;
-  bottom: 0.05rem;
+  bottom: 0.2rem;
   left: 0;
   color: #A0A2B0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.25rem;
-  transform: scale(0.7);
+  font-size: 0.32rem;
   opacity: 0.6;
 }
 
 .company-logo img{
-  width: 0.54rem;
-  height: 0.54rem;
+  width: 0.44rem;
+  height: 0.44rem;
   display: inline-block;
   margin-right: 10px;
 }
 
 .poster-tit{
   /*height: 1.40rem;*/
-  padding: 0 0.33rem 0 0.41rem;
-  font-size: 0.47rem;
+  padding: 0 0.45rem 0 0.56rem;
+  margin: 0;
+  font-size: 0.64rem;
   /*margin-top: 1.88rem;*/
   text-align: right;
   color: #fff;
   overflow: hidden;
-  font-weight: bold;
+  /*font-weight: bold;*/
   position: absolute;
-  top: 1.88rem;
+  top: 2.58rem;
   left: 0;
 }
 
 .poster-tit7{
-  padding: 0 0.33rem 0 0.41rem;
-  font-size: 0.47rem;
+  padding: 0 0.45rem 0 0.56rem;
+  font-size: 0.64rem;
   /*margin-top: 2.27rem;*/
   text-align: left;
   color: #F8E699;
   overflow: hidden;
-  font-weight: bold;
+  /*font-weight: bold;*/
   position: absolute;
-  top: 2.27rem;
+  top: 3.11rem;
   left: 0;
 }
 
 .poster-tit8{
   /*height: 2.11rem;*/
-  padding: 0 0.33rem 0 0.41rem;
-  font-size: 0.47rem;
+  padding: 0 0.45rem 0 0.56rem;
+  font-size: 0.64rem;
   /*margin-top: 1.36rem;*/
   text-align: left;
   color: #172760;
   overflow: hidden;
-  font-weight: bold;
+  /*font-weight: bold;*/
   position: absolute;
-  top: 1.36rem;
+  top: 1.86rem;
   left: 0;
 }
 
 .user-sec-info{
   position: absolute;
-  top: 5.18rem;
+  top: 6.91rem;
   left: 0;
 }
 
 .user-info{
   width: 100%;
+  margin-right: 0.45rem;
   /*margin-top: 1.90rem;*/
   display: flex;
   align-items: center;
   overflow: hidden;
   flex-direction: row-reverse;
+  margin-bottom: 0.1rem;
 }
-
-.user-info .user-info-img{
-  width: 0.41rem !important;
-  height: 0.41rem;
-  border: 1px solid #756ade;
+.user-info>div{
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 100%;
   margin: 0;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
+  margin-left: 0.42rem;
+  border: 1px solid #756ade;
+}
+.user-info .user-info-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
 }
 
 .user-info .user-info-name{
   color: #fff;
-  margin-right: 0.22rem;
   display: inline-block;
-  font-size: 0.33rem;
-  transform: scale(0.7);
+  font-size: 0.32rem;
+  margin-left: 0.15rem;
+  margin-right: 0.15rem;
 }
 
 .user-title-box{
   width: 100%;
-  margin-right: -0.52rem;
-  margin-top: 0.1rem;
+  margin-right: 0.45rem;
+  margin-top: 0.25rem;
 }
 
 .poster-user-title{
   width: 100%;
-  font-size: 0.25rem;
-  transform: scale(0.7);
+  font-size: 0.32rem;
+  /*transform: scale(0.6);*/
   margin: 0;
-  margin-right: -0.42rem;
   color: #EFD000;
   text-align: right;
 }
 
 .share-user-box{
-  width: 1.40rem;
-  height: 1.62rem;
-  margin-left: 3.8rem;
-  margin-top: 0.31rem;
+  margin-left: 5.5rem;
+  margin-top: 0.42rem;
 }
 
 .share-ewm7{
-  width: 0.86rem !important;
-  height: 0.86rem;
+  width: 1.2rem !important;
+  height: 1.2rem;
   margin: 0 auto;
   display: block;
   background-size: 100% 100%;
@@ -596,33 +565,13 @@ body {
   border: 0.07rem solid #fff;
 }
 
-.share-ewm-box{
-  width: 1.40rem;
-  overflow: hidden;
-}
-
-.share-ewm-text{
-  width: 2.79rem;
-  font-size: 0.25rem;
-  transform: scale(0.7);
-  text-align: center;
-  color: #fff;
-  margin-left: -0.7rem;
-}
-
-.user-box{
-  width: 100%;
-  margin-top: 7.34rem;
-  overflow: hidden;
-}
-
 .poster-box-7{
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
   position: absolute;
-  top: 5.17rem;
+  top: 7.08rem;
   left: 0;
   flex-wrap: wrap;
 }
@@ -633,24 +582,21 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 7.17rem;
+  top: 9.82rem;
   left: 0;
 }
 
 .box-info{
-  width: 4.14rem;
+  width: 5.67rem;
 }
 
 .box-info9{
-  width: 3.79rem;
+  width: 5.19rem;
 }
 
 .share-ewm8{
-  width: 0.86rem !important;
-  height: 0.86rem;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
+  width: 1.18rem !important;
+  height: 1.18rem;
   border: 0.07rem solid #fff;
 }
 
@@ -660,42 +606,41 @@ body {
   align-items: center;
   overflow: hidden;
   flex-direction: row;
-  margin-bottom: 0.11rem;
+  margin-bottom: 0.15rem;
 }
-
-.user-info1 .user-info-img{
-  width: 0.41rem !important;
-  height: 0.41rem;
-  border: 1px solid #3b3d56;
+.user-info1>div{
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 100%;
   margin: 0;
-  margin-left: 0.31rem;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
+  margin-left: 0.42rem;
+  border: 1px solid #3b3d56;
+}
+.user-info1 .user-info-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
 }
 
 .user-info1 .user-info-name{
   color: #fff;
-  margin-right: 0.22rem;
+  margin-left: 0.2rem;
   display: inline-block;
-  font-size: 0.33rem;
-  transform: scale(0.7);
+  font-size: 0.32rem;
 }
 
 .user-title-box1{
-  margin-left: 0.1rem;
+  margin-left: 1.15rem;
 }
 
 .user-title-box1_top{
-  margin-top: -0.15rem;
+  margin-top: 0.15rem;
 }
 
 .poster-user-title1{
-  width: 120%;
-  font-size: 0.25rem;
-  transform: scale(0.7);
-  margin: 0;
+  font-size: 0.32rem;
+  /*transform: scale(0.6);*/
+  margin: 0.15rem 0 0;
   color: #A0A2B0;
   text-align: left;
 }
@@ -706,25 +651,182 @@ body {
   align-items: center;
   overflow: hidden;
   flex-direction: row;
-  margin-bottom: 0.11rem;
+  margin-bottom: 0.15rem;
 }
 
-.user-info2 .user-info-img{
-  width: 0.41rem !important;
-  height: 0.41rem;
+.user-info2>div{
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 100%;
   margin: 0;
-  margin-left: 0.31rem;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
+  margin-left: 0.42rem;
+  border: 1px solid #fff;
+}
+.user-info2 .user-info-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
 }
 
 .user-info2 .user-info-name{
   color: #08080A;
-  margin-right: 0.22rem;
+  margin-left: 0.2rem;
   display: inline-block;
-  font-size: 0.33rem;
-  transform: scale(0.7);
+  font-size: 0.32rem;
 }
 
+/* ***/
+.poster-tit9{
+  padding: 0 0.56rem 0 0.38rem;
+  font-size: 0.64rem;
+  /*margin-top: 1.36rem;*/
+  text-align: left;
+  color: #fff;
+  overflow: hidden;
+  /*font-weight: bold;*/
+  position: absolute;
+  top: 1.86rem;
+  left: 0;
+}
+
+.user-info2 .user-info-name.info-name3{
+  color: #4B7F80;
+  margin-left: 0.2rem;
+  display: inline-block;
+  font-size: 0.32rem;
+}
+.poster-user-title1.info-title-color3{
+  color: #57C2C5;
+}
+.poster-tit10{
+  padding: 0 0.56rem 0 0.38rem;
+  font-size: 0.64rem;
+  margin: 0;
+  text-align: left;
+  color: #fff;
+  overflow: hidden;
+  /*font-weight: bold;*/
+  position: absolute;
+  top: 2.44rem;
+  left: 0;
+}
+.poster-box-10 {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10.2rem;
+  left: 0;
+}
+.poster-tit11{
+  padding: 0 0.56rem 0 0.38rem;
+  font-size: 0.64rem;
+  margin: 0;
+  text-align: left;
+  color: #C46C8A;
+  overflow: hidden;
+  /*font-weight: bold;*/
+  position: absolute;
+  top: 7.6rem;
+  left: 0;
+}
+.user-info2>div.info-img5{
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 100%;
+  margin: 0;
+  margin-left: 0.42rem;
+  border: 1px solid #9C7C6C;
+}
+.user-info2 .user-info-name.info-name5{
+  color: #9C7C6C;
+  margin-left: 0.2rem;
+  display: inline-block;
+  font-size: 0.32rem;
+}
+.poster-user-title1.info-title-color5{
+  color: #5A6167;
+}
+.poster-tit12{
+  padding: 0 0.56rem 0 0.38rem;
+  font-size: 0.64rem;
+  margin: 0;
+  text-align: right;
+  color: #fff;
+  overflow: hidden;
+  /*font-weight: bold;*/
+  position: absolute;
+  top: 1.54rem;
+  left: 0;
+}
+.user-info2 .user-info-name.info-name6{
+  color: #E2F1E6;
+  margin-left: 0.2rem;
+  display: inline-block;
+  font-size: 0.32rem;
+}
+.poster-user-title1.info-title-color6{
+  color: #B0D3BA;
+}
+.poster-tit13{
+  padding: 0 0.56rem 0 0.38rem;
+  font-size: 0.64rem;
+  margin: 0;
+  text-align: right;
+  color: #fff;
+  overflow: hidden;
+  /*font-weight: bold;*/
+  position: absolute;
+  top: 1.54rem;
+  left: 0;
+}
+.poster-box-13{
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 7.56rem;
+  left: 0;
+}
+.poster-box-13 .user-img-border{
+  width: 0.768rem;
+  height: 0.768rem;
+  border-radius: 100%;
+  margin: 0 auto;
+  border: 1px solid #fff;
+}
+.poster-box-13 .user-img-border .user-info-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.poster-box-13 .user-info-name{
+  width: 100%;
+  font-size: 0.38rem;
+  color: #fff;
+  text-align: center;
+}
+.poster-box-13 .user-info-name{
+  width: 100%;
+  font-size: 0.38rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.15rem;
+}
+.poster-box-13 .poster-user-title7{
+  width: 100%;
+  font-size: 0.32rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.15rem;
+}
+.share-ewm13-border{
+  width: 0.96rem !important;
+  height: 0.96rem;
+  margin: 0.3rem auto 0;
+  border: 0.07rem solid #fff;
+}
+.share-ewm13{
+  width: 100%;
+  height: 100%;
+}

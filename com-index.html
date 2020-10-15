@@ -2,12 +2,13 @@
 <html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
-    <title>∑÷œÌ∫£±®</title>
+    <title>ÂàÜ‰∫´Êµ∑Êä•</title>
     <div data-th-replace="layout/head"></div>
     <meta http-equiv="Access-Control-Allow-Origin" content="yes">
     <link rel="stylesheet" th:href="@{{path}/front/mobile/v3/css/share2.0/public.css?v={v}(path=${staticPath},v=${v})}">
     <link rel="stylesheet" th:href="@{{path}/front/mobile/v3/css/share2.0/index.css?v={v}(path=${staticPath},v=${v})}">
     <style>
+        #posterPic{width: 7.2rem !important;min-height:13.57rem;}
         .toast{transform: scale(0.5) !important;margin-left:-23% !important;margin-top:-23% !important;}
         .sharePrompt {top: 3.5rem;}
         .sharePrompt p{padding: .25rem 0.5rem; font-size: .45rem;}
@@ -16,61 +17,60 @@
         .actions-modal-button .fs7 {font-size: .4rem;}
         .shareArrow {position: absolute;top: 1.5rem;right: 0.8rem;z-index: 99999;}
         .shareArrow em {width: 1.862rem;height: 1.35rem;}
+        .button-link{line-height: 1.2rem; position: fixed; top:0; left: 0;}
+        .company-logo img{border-radius:100%;}
     </style>
 </head>
 <body>
 <div id="app">
-<!--    <header class="bar bar-nav bs-header">-->
-<!--         <a href="javascript:window.history.back()" class="button button-link button-nav pull-left goBack">-->
-<!--            <span class="iconfont icon-fanhui"></span>-->
-<!--        </a>-->
-<!--        <h1 class="title unBorder">∫£±®∑÷œÌ</h1>-->
-<!--    </header>-->
-    <!--∫£±®‘§¿¿«¯-->
+    <a href="javascript:window.history.back()" class="button button-link button-nav pull-left goBack">
+        <span class="iconfont icon-fanhui"></span>
+    </a>
+    <!--Êµ∑Êä•È¢ÑËßàÂå∫-->
     <section class="bs-review__wrap">
-        <!-- ∫£±®Õº∆¨Swiper -->
+        <!-- Êµ∑Êä•ÂõæÁâáSwiper -->
         <div id="posterPic" class="swiper-container swiper-no-swiping poster-pic">
             <div v-if="type == 1" class="swiper-wrapper">
                 <div class="swiper-slide swiper-no-swiping" v-for="(item,index) in posterImg.list_pic">
                     <div class="bs-poster" :id=[`bs-poster-${index}`] v-show="item.isSecShow">
-                        <div><img class="bs-poster-bg" :src="item.bg" alt=""></div>
+                        <div><img class="bs-poster-bg" :src="item.bg" alt="" crossorigin="anonymous"></div>
                         <div class="poster-box1">
-                            <div><img class="user-img" :src="avatar"></div>
+                            <div><img class="user-img" :src="avatar" crossorigin="anonymous"></div>
                             <p class="user-name">{{userName}}</p>
                             <p class="user-study">{{shareText}}</p>
                             <p class="poster-title">{{shareTitle}}</p>
-                            <div><img class="poster-secpic" :src="articleImg"></div>
+                            <div><img class="poster-secpic" :src="courseImage" crossorigin="anonymous"></div>
                             <div class="edu-form">- {{eduText}} -</div>
                             <div class="share-box">
-                                <div><img class="share-ewm" :src="ewmImg"></div>
-                                <div><img class="share-zwm" :src="zwmImg" alt=""></div>
+                                <div><img class="share-ewm" :src="ewmImg" crossorigin="anonymous"></div>
+                                <div><img class="share-zwm" :src="zwmImg" alt="" crossorigin="anonymous"></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="" crossorigin="anonymous">{{companyText}}</div>
                         </div>
                     </div>
-                    <img class="poster-img" v-show="item.isPoster" :src="item.src" alt="">
+                    <img class="poster-img" v-show="item.isPoster" :src="item.src" alt="" crossorigin="anonymous">
                 </div>
                 <div class="swiper-slide swiper-no-swiping">
-                    <div class="bs-poster" id="bs-poster-5" v-if="posterImg.list_npic[0].isSecShow">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length}`] v-if="posterImg.list_npic[0].isSecShow">
                         <div><img class="bs-poster-bg" :src="posterImg.list_npic[0].bg" alt=""></div>
                         <div class="poster-box1">
                             <div><img class="user-img" :src="avatar"></div>
                             <p class="user-name">{{userName}}</p>
                             <p class="user-study">{{shareText}}</p>
                             <p class="poster-title poster-title3">{{shareTitle}}</p>
-                            <p class="poster-text">∑÷œÌƒ⁄»›</p>
+<!--                            <p class="poster-text">ÂàÜ‰∫´ÂÜÖÂÆπ</p>-->
                             <div class="edu-form edu-form5">- {{eduText}} -</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[0].isPoster" :src="posterImg.list_npic[0].src" alt="">
                 </div>
                 <div class="swiper-slide swiper-no-swiping">
-                    <div class="bs-poster" id="bs-poster-6" v-if="posterImg.list_npic[1].isSecShow">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+1}`] v-if="posterImg.list_npic[1].isSecShow">
                         <div><img class="bs-poster-bg" :src="posterImg.list_npic[1].bg" alt=""></div>
                         <div class="poster-box1">
                             <p class="poster-tit">{{shareTitle}}</p>
@@ -85,13 +85,13 @@
                                     <div><img class="share-ewm7" :src="ewmImg"></div>
                                 </div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[1].isPoster" :src="posterImg.list_npic[1].src" alt="">
                 </div>
                 <div class="swiper-slide swiper-no-swiping">
-                    <div class="bs-poster" id="bs-poster-7" v-if="posterImg.list_npic[2].isSecShow">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+2}`] v-if="posterImg.list_npic[2].isSecShow">
                         <div><img class="bs-poster-bg" :src="posterImg.list_npic[2].bg" alt=""></div>
                         <div class="poster-box1">
                             <p class="poster-tit7">{{shareTitle}}</p>
@@ -106,13 +106,13 @@
                                 </div>
                                 <div><img class="share-ewm8" :src="ewmImg"></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[2].isPoster" :src="posterImg.list_npic[2].src" alt="">
                 </div>
                 <div class="swiper-slide swiper-no-swiping">
-                    <div class="bs-poster" id="bs-poster-8" v-if="posterImg.list_npic[3].isSecShow">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+3}`] v-if="posterImg.list_npic[3].isSecShow">
                         <div><img class="bs-poster-bg" :src="posterImg.list_npic[3].bg" alt=""></div>
                         <div class="poster-box1">
                             <p class="poster-tit8">{{shareTitle}}</p>
@@ -127,10 +127,113 @@
                                 </div>
                                 <div><img class="share-ewm8" :src="ewmImg"></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[3].isPoster" :src="posterImg.list_npic[3].src" alt="">
+                </div>
+
+<!--                Êñ∞-->
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+4}`] v-if="posterImg.list_npic[4].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[4].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit9">{{shareTitle}}</p>
+                            <div class="poster-box-8">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name info-name3">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1 info-title-color3">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1 info-title-color3">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[4].isPoster" :src="posterImg.list_npic[4].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+5}`] v-if="posterImg.list_npic[5].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[5].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit10">{{shareTitle}}</p>
+                            <div class="poster-box-10">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[5].isPoster" :src="posterImg.list_npic[5].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+6}`] v-if="posterImg.list_npic[6].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[6].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit11">{{shareTitle}}</p>
+                            <div class="poster-box-10">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div class="info-img5"><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name info-name5">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1 info-title-color5">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1 info-title-color5">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[6].isPoster" :src="posterImg.list_npic[6].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+7}`] v-if="posterImg.list_npic[7].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[7].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit12">{{shareTitle}}</p>
+                            <div class="poster-box-10">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name info-name6">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1 info-title-color6">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1 info-title-color6">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[7].isPoster" :src="posterImg.list_npic[7].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" :id=[`bs-poster-${posterImg.list_pic.length+8}`] v-if="posterImg.list_npic[8].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[8].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit13">{{shareTitle}}</p>
+                            <div class="poster-box-13">
+                                <div class="user-img-border"><img class="user-info-img" :src="avatar"></div>
+                                <div class="user-info-name">{{userName}}</div>
+                                <div class="poster-user-title7">{{shareText}}</div>
+                                <div class="poster-user-title7">- {{eduText}} -</div>
+                                <div class="share-ewm13-border"><img class="share-ewm13" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[8].isPoster" :src="posterImg.list_npic[8].src" alt="">
                 </div>
             </div>
             <div v-if="type == 2" class="swiper-wrapper">
@@ -142,13 +245,13 @@
                             <p class="user-name">{{userName}}</p>
                             <p class="user-study">{{shareText}}</p>
                             <p class="poster-title poster-title3">{{shareTitle}}</p>
-                            <p class="poster-text">∑÷œÌƒ⁄»›</p>
+                            <p class="poster-text">ÂàÜ‰∫´ÂÜÖÂÆπ</p>
                             <div class="edu-form edu-form5">- {{eduText}} -</div>
                             <div class="share-box">
                                 <div><img class="share-ewm" :src="ewmImg"></div>
                                 <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[0].isPoster" :src="posterImg.list_npic[0].src" alt="">
@@ -169,7 +272,7 @@
                                     <div><img class="share-ewm7" :src="ewmImg"></div>
                                 </div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[1].isPoster" :src="posterImg.list_npic[1].src" alt="">
@@ -190,7 +293,7 @@
                                 </div>
                                 <div><img class="share-ewm8" :src="ewmImg"></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[2].isPoster" :src="posterImg.list_npic[2].src" alt="">
@@ -211,20 +314,123 @@
                                 </div>
                                 <div><img class="share-ewm8" :src="ewmImg"></div>
                             </div>
-                            <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
                         </div>
                     </div>
                     <img class="poster-img" v-if="posterImg.list_npic[3].isPoster" :src="posterImg.list_npic[3].src" alt="">
                 </div>
+
+<!--                Êñ∞-->
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" id="bs-poster-4A" v-if="posterImg.list_npic[4].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[4].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit9">{{shareTitle}}</p>
+                            <div class="poster-box-8">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name info-name3">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1 info-title-color3">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1 info-title-color3">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[4].isPoster" :src="posterImg.list_npic[4].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" id="bs-poster-5A" v-if="posterImg.list_npic[5].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[5].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit10">{{shareTitle}}</p>
+                            <div class="poster-box-10">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[5].isPoster" :src="posterImg.list_npic[5].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" id="bs-poster-6A" v-if="posterImg.list_npic[6].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[6].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit11">{{shareTitle}}</p>
+                            <div class="poster-box-10">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div class="info-img5"><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name info-name5">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1 info-title-color5">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1 info-title-color5">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[6].isPoster" :src="posterImg.list_npic[6].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" id="bs-poster-7A" v-if="posterImg.list_npic[7].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[7].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit12">{{shareTitle}}</p>
+                            <div class="poster-box-10">
+                                <div class="box-info">
+                                    <div class="user-info2">
+                                        <div><img class="user-info-img" :src="avatar"></div>
+                                        <span class="user-info-name info-name6">{{userName}}</span>
+                                    </div>
+                                    <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1 info-title-color6">{{shareText}}</div></div>
+                                    <div class="user-title-box1"><div class="poster-user-title1 info-title-color6">- {{eduText}} -</div></div>
+                                </div>
+                                <div><img class="share-ewm8" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[7].isPoster" :src="posterImg.list_npic[7].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <div class="bs-poster" id="bs-poster-8A" v-if="posterImg.list_npic[8].isSecShow">
+                        <div><img class="bs-poster-bg" :src="posterImg.list_npic[8].bg" alt=""></div>
+                        <div class="poster-box1">
+                            <p class="poster-tit13">{{shareTitle}}</p>
+                            <div class="poster-box-13">
+                                <div class="user-img-border"><img class="user-info-img" :src="avatar"></div>
+                                <div class="user-info-name">{{userName}}</div>
+                                <div class="poster-user-title7">{{shareText}}</div>
+                                <div class="poster-user-title7">- {{eduText}} -</div>
+                                <div class="share-ewm13-border"><img class="share-ewm13" :src="ewmImg"></div>
+                            </div>
+                            <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+                        </div>
+                    </div>
+                    <img class="poster-img" v-if="posterImg.list_npic[8].isPoster" :src="posterImg.list_npic[8].src" alt="">
+                </div>
             </div>
             <div class="save-sec">
                 <img class="save-icon" th:src="@{{path}/front/mobile/v3/img/share2.0/xz-save-icon.png(path=${staticPath})}">
-                <p class="save-text">≥§∞¥…œ∑ΩÕº∆¨±£¥ÊµΩœ‡≤·</p>
+                <p class="save-text">ÈïøÊåâ‰∏äÊñπÂõæÁâá‰øùÂ≠òÂà∞Áõ∏ÂÜå</p>
             </div>
         </div>
 
     </section>
-    <!-- ∫£±®ƒ£∞ÂSwiper -->
+    <!-- Êµ∑Êä•Ê®°ÊùøSwiper -->
     <div class="swiper-container poster-temp">
         <div v-if="type == 1" class="swiper-wrapper">
             <div class="swiper-slide" v-for="(item, index) in typeImgList1">
@@ -241,15 +447,15 @@
     <footer class="bs-footer">
         <div class="btm-box Share" id="weixinShare" @click="shareWxPath">
             <img th:src="@{{path}/front/mobile/v3/img/share2.0/wx-icon-img.png(path=${staticPath})}" class="btm-icon">
-            <button class="btn-sec" open-type=share hover-class="none">∑÷œÌµΩŒ¢–≈</button>
+            <button class="btn-sec" open-type=share hover-class="none">ÂàÜ‰∫´Âà∞ÂæÆ‰ø°</button>
         </div>
         <div class="btm-box Share" id="qqShare" @click="shareQQPath">
             <img th:src="@{{path}/front/mobile/v3/img/share2.0/QQ-icon-img.png(path=${staticPath})}" class="btm-icon">
-            <button class="btn-sec" open-type=share hover-class="none">∑÷œÌµΩQQ</button>
+            <button class="btn-sec" open-type=share hover-class="none">ÂàÜ‰∫´Âà∞QQ</button>
         </div>
         <div class="btm-box" id="copyUrl" @click="copyPath">
             <img th:src="@{{path}/front/mobile/v3/img/share2.0/path-icon-img.png(path=${staticPath})}" class="btm-icon">
-            <button class="btn-sec" open-type=share hover-class="none">∏¥÷∆¡¥Ω”</button>
+            <button class="btn-sec" open-type=share hover-class="none">Â§çÂà∂ÈìæÊé•</button>
         </div>
     </footer>
     <div class="cavImgLoading" id="cavImgLoading" v-if="loading">
@@ -262,18 +468,22 @@
 <input type="hidden" id="eduText" th:value="${eduText}">
 <input type="hidden" id="userName" th:value="${userName}">
 <input type="hidden" id="avatar" th:value="${avatar}">
-<input type="hidden" id="compangLogo" th:value="${compangLogo}">
+<input type="hidden" id="compangLogo" th:value="${logoMap['url']}">
 <input type="hidden" id="shareUrl" th:value="${shareUrl}">
 <input type="hidden" id="courseImage" th:value="${courseImage}">
 <input type="hidden" id="type" th:value="${type}">
 <input type="hidden" id="shareTitle" th:value="${shareTitle}">
+<input type="hidden" id="shareText" th:value="${shareText}">
 <div data-th-replace="layout/footer"></div>
-<!--“˝»Îvue-->
+
+<!--ÂºïÂÖ•vue-->
 <script th:src="@{{path}/common/fui/js/vue.js?v={v}(path=${staticPath},v=${v})}"></script>
-<!--“˝»Îswiper-->
-<script th:src="@{{path}/front/mobile/business/marketing/baseShare/swiper.js?v={v}(path=${staticPath},v=${v})}"></script>
-<script th:src="@{{path}/front/mobile/business/marketing/baseShare/html2canvas.js?v={v}(path=${staticPath},v=${v})}"></script>
-<script th:src="@{{path}/front/mobile/business/marketing/baseShare/sharePoster-2.0.js?v={v}(path=${staticPath},v=${v})}"></script>
-<script th:src="@{{path}/common/qrcode/qrcode.min.js?v={v}(path=${staticPath},v=${v})}"></script>
+<!--ÂºïÂÖ•swiper-->
+<script src="./js/vue.js"></script>
+<script src="./js/swiper.js"></script>
+
+<!-- 1.0.0-rc.5 ‰∏ÄËà¨H5ÁéØÂ¢ÉÔºå (ÂÖ¨Âè∏ÁéØÂ¢É‰∏çË°å) ÁîüÊàêÂõæÁâáÊïàÊûúÊúÄÂ•ΩÁöÑ‰∏Ä‰∏™ -->
+<script src="./js/html2canvas-0.5.0-beta4.js"></script>
+<script src="./js/com-poster.js"></script>
 </body>
 </html>
