@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
-<html lang="zh_CN" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
     <title>分享海报</title>
     <meta charset="utf-8">
@@ -20,247 +20,339 @@
     ================================================== -->
     <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
     <meta name="format-detection" content="telephone=no,email=no,date=no,aItemress=no">
-    <!-- MSUI CSS
-    ================================================== -->
-    <link rel="stylesheet" href="https://static.268xue.com/front/mobile/v3/wmui/0.6.2/css/wm.min.css?v=1598349572754">
     <link rel="stylesheet" href="./css/public.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/optimize-index.css">
 </head>
 <body>
-    <div id="app">
-        <!-- <header class="bar bar-nav bs-header">
-            <h1 class="title unBorder">海报分享</h1>
-        </header> -->
-        <!--海报预览区-->
-        <section class="bs-review__wrap">
-            <!-- 海报图片Swiper -->
-            <div id="posterPic" class="swiper-container swiper-no-swiping poster-pic">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-0" v-if="posterImg[0].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[0].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg1">
-                                <div><img class="user-img" :src="userImg"></div>
-                                <p class="user-name">{{userName}}</p>
-                                <p class="user-study">邀您一起来学习</p>
-                                <p class="poster-title">{{articleTitle}}</p>
-                                <div><img class="poster-secpic" :src="articleImg"></div>
-                                <div class="edu-form">来自“268教育软件”</div>
-                                <div class="share-box">
-                                    <div><img class="share-ewm" :src="ewmImg"></div>
-                                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[0].isPoster" :src="posterImg[0].src" alt="">
+<div id="app">
+    <a href="javascript:void(0);" class="button button-link button-nav pull-left goBack" onclick="goBack();">
+        <span class="iconfont icon-fanhui"></span>
+    </a>
+    <!-- div框架-->
+    <div id="posterPic">
+        <template v-for="(item,index) in posterImg.list_pic">
+            <div class="bs-poster" :id=[`bs-poster-${index}`] v-if="item.isSecShow">
+                <div><img class="bs-poster-bg" :src="item.bg" alt="" crossorigin="anonymous"></div>
+                <div class="poster-box1">
+                    <div><img class="user-img" :src="avatar" crossorigin="anonymous"></div>
+                    <p class="user-name">{{userName}}</p>
+                    <p class="user-study">{{shareText}}</p>
+                    <p class="live-time" v-if="liveTime">最近直播：{{liveTime}}</p>
+                    <p class="poster-title">{{shareTitle}}</p>
+                    <div><img class="poster-secpic" :src="courseImage" crossorigin="anonymous"></div>
+                    <div class="edu-form">- {{eduText}} -</div>
+                    <div class="share-box">
+                        <div><img class="share-ewm" :src="ewmImg" crossorigin="anonymous"></div>
+                        <div><img class="share-zwm" :src="zwmImg" alt="" crossorigin="anonymous"></div>
                     </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-1" v-if="posterImg[1].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[1].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg2">
-                                <div><img class="user-img" :src="userImg"></div>
-                                <p class="user-name">{{userName}}</p>
-                                <p class="user-study">邀您一起来学习</p>
-                                <p class="poster-title">{{articleTitle}}</p>
-                                <div><img class="poster-secpic" :src="articleImg"></div>
-                                <div class="edu-form">来自“268教育软件”</div>
-                                <div class="share-box">
-                                    <div><img class="share-ewm" :src="ewmImg"></div>
-                                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[1].isPoster" :src="posterImg[1].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-2" v-if="posterImg[2].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[2].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg3">
-                                <div><img class="user-img" :src="userImg"></div>
-                                <p class="user-name">{{userName}}</p>
-                                <p class="user-study">邀您一起来学习</p>
-                                <p class="poster-title">{{articleTitle}}</p>
-                                <div><img class="poster-secpic poster-secpic3" :src="articleImg"></div>
-                                <div class="edu-form">来自“268教育软件”</div>
-                                <div class="share-box">
-                                    <div><img class="share-ewm" :src="ewmImg"></div>
-                                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[2].isPoster" :src="posterImg[2].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-3" v-if="posterImg[3].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[3].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg4">
-                                <div><img class="user-img" :src="userImg"></div>
-                                <p class="user-name">{{userName}}</p>
-                                <p class="user-study">邀您一起来看直播</p>
-                                <p class="poster-title">{{articleTitle}}</p>
-                                <div><img class="poster-secpic" :src="articleImg"></div>
-                                <div class="edu-form">来自“268教育软件”</div>
-                                <div class="share-box">
-                                    <div><img class="share-ewm" :src="ewmImg"></div>
-                                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[3].isPoster" :src="posterImg[3].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-4" v-if="posterImg[4].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[4].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg5">
-                                <div><img class="user-img" :src="userImg"></div>
-                                <p class="user-name">{{userName}}</p>
-                                <p class="user-study">邀您一起来看直播</p>
-                                <p class="poster-title">{{articleTitle}}</p>
-                                <div><img class="poster-secpic" :src="articleImg"></div>
-                                <div class="edu-form">来自“268教育软件”</div>
-                                <div class="share-box">
-                                    <div><img class="share-ewm" :src="ewmImg"></div>
-                                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[4].isPoster" :src="posterImg[4].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-5" v-if="posterImg[5].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[5].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg6">
-                                <div><img class="user-img" :src="userImg"></div>
-                                <p class="user-name">{{userName}}</p>
-                                <p class="user-study">正在做作业，邀您一起来拼团</p>
-                                <p class="poster-title poster-title3">{{articleTitle}}</p>
-                                <p class="poster-text">分享内容</p>
-                                <!-- <div class="poster-secpic" :style="{backgroundImage: 'url(' + articleImg + ')'}"></div> -->
-                                <div class="edu-form edu-form5">来自“268教育软件”</div>
-                                <div class="share-box">
-                                    <div><img class="share-ewm" :src="ewmImg"></div>
-                                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[5].isPoster" :src="posterImg[5].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-6" v-if="posterImg[6].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[6].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg7">
-                                <p class="poster-tit">微信小程序入门与实战-2020全新版</p>
-                                <div class="user-info">
-                                    <span class="user-info-name">{{userName}}</span>
-                                    <div><img class="user-info-img" :src="userImg"></div>
-                                </div>
-                                <div class="user-title-box"><div class="poster-user-title">发现了一门好课，邀请您一起来拼团</div></div>
-                                <div class="user-title-box"><div class="poster-user-title">- {{companyText}} -</div></div>
-                                <div class="share-user-box">
-                                    <div><img class="share-ewm7" :src="ewmImg"></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[6].isPoster" :src="posterImg[6].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">                    
-                        <div class="bs-poster" id="bs-poster-7" v-if="posterImg[7].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[7].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg8">
-                                <p class="poster-tit7">微信小程序入门与实战-2020全新版</p>
-                                <div class="poster-box-8">
-                                    <div class="box-info">
-                                        <div class="user-info1">
-                                            <div><img class="user-info-img" :src="userImg"></div>
-                                            <span class="user-info-name">{{userName}}</span>
-                                        </div>
-                                        <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1">发现了一门好课，邀请您一起来拼团</div></div>
-                                        <div class="user-title-box1"><div class="poster-user-title1">- {{companyText}} -</div></div>
-                                    </div>
-                                    <div><img class="share-ewm8" :src="ewmImg"></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[7].isPoster" :src="posterImg[7].src" alt="">
-                    </div>
-                    <div class="swiper-slide swiper-no-swiping">
-                        <div class="bs-poster" id="bs-poster-8" v-if="posterImg[8].isSecShow">
-                            <div><img class="bs-poster-bg" :src="posterImg[8].bg" alt=""></div>
-                            <div class="poster-box1 poster-bg9">
-                                <p class="poster-tit8">微信小程序入门与实战序入门与实序入门-2020全新版</p>
-                                <div class="poster-box-8">
-                                    <div class="box-info">
-                                        <div class="user-info2">
-                                            <div><img class="user-info-img" :src="userImg"></div>
-                                            <span class="user-info-name">{{userName}}</span>
-                                        </div>
-                                        <div class="user-title-box1 user-title-box1_top"><div class="poster-user-title1">发现了一门好课，邀请您一起来拼团</div></div>
-                                        <div class="user-title-box1"><div class="poster-user-title1">- {{companyText}} -</div></div>
-                                    </div>
-                                    <div><img class="share-ewm8" :src="ewmImg"></div>
-                                </div>
-                                <div class="company-logo"><img :src="compangLogo" alt="">{{companyText}}</div>
-                            </div>
-                        </div>
-                        <img class="poster-img" v-if="posterImg[8].isPoster" :src="posterImg[8].src" alt="">
-                    </div>
-                </div>
-                <div class="save-sec">
-                    <img class="save-icon" src="./imgs/xz-save-icon.png">
-                    <p class="save-text">长按上方图片保存到相册</p>
+                    <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="" crossorigin="anonymous">{{companyText}}</div>
                 </div>
             </div>
-            
-        </section>
-        <!-- 海报模板Swiper -->
-        <div class="swiper-container poster-temp">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in typeImgList">
-                    <img class="type-img" :src="item.src">
+        </template>
+        <div class="bs-poster bs-poster-0A" :id=[`bs-poster-${posterImg.list_pic.length}`] v-if="posterImg.list_npic[0].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[0].bg" alt=""></div>
+            <div class="poster-box1">
+                <div><img class="user-img" :src="avatar"></div>
+                <p class="user-name">{{userName}}</p>
+                <p class="user-study">{{shareText}}</p>
+                <p class="live-time live-time3" v-if="liveTime">最近直播:{{liveTime}}</p>
+                <p class="poster-title poster-title3">{{shareTitle}}</p>
+                <div class="edu-form edu-form5">- {{eduText}} -</div>
+                <div class="share-box">
+                    <div><img class="share-ewm" :src="ewmImg"></div>
+                    <div><img class="share-zwm" :src="zwmImg" alt=""></div>
                 </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
             </div>
         </div>
-        <footer class="bs-footer">
-            <div class="btm-box">
-                <img src="./imgs/wx-icon.png" class="btm-icon">
-                <button class="btn-sec" open-type=share hover-class="none">分享到微信</button>
+        <div class="bs-poster bs-poster-1A" :id=[`bs-poster-${posterImg.list_pic.length+1}`] v-if="posterImg.list_npic[1].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[1].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit">{{shareTitle}}</p>
+                <div class="poster-box-7">
+                    <div class="user-info">
+                        <span class="user-info-name">{{userName}}</span>
+                        <div><img class="user-info-img" :src="avatar"></div>
+                    </div>
+                    <div class="poster-user-title color7-one">{{shareText}}</div>
+                    <div class="poster-user-title color7-two" v-if="liveTime">最近直播:{{liveTime}}</div>
+                    <div class="poster-user-title color7-thr">- {{eduText}} -</div>
+                    <div class="share-user-box">
+                        <div><img class="share-ewm7" :src="ewmImg"></div>
+                    </div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
             </div>
-            <div class="btm-box">
-                <img src="./imgs/path-icon.png" class="btm-icon">
-                <button class="btn-sec" open-type=share hover-class="none">复制链接</button>
+        </div>
+        <div class="bs-poster bs-poster-2A" :id=[`bs-poster-${posterImg.list_pic.length+2}`] v-if="posterImg.list_npic[2].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[2].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit7">{{shareTitle}}</p>
+                <div class="poster-box-8">
+                    <div class="box-info">
+                        <div class="user-info1">
+                            <div><img class="user-info-img" :src="avatar"></div>
+                            <span class="user-info-name">{{userName}}</span>
+                        </div>
+                        <div class="poster-user-title1">{{shareText}}</div>
+                        <div class="poster-user-title1 color8-two" v-if="liveTime">最近直播:{{liveTime}}</div>
+                        <div class="poster-user-title1">- {{eduText}} -</div>
+                    </div>
+                    <div><img class="share-ewm8" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
             </div>
-        </footer>
-        <div class="cavImgLoading" id="cavImgLoading" v-if="loading">
-            <div class="modal-overlay modal-overlay-visible"></div>
-            <div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>
+        </div>
+        <div class="bs-poster bs-poster-3A" :id=[`bs-poster-${posterImg.list_pic.length+3}`] v-if="posterImg.list_npic[3].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[3].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit8">{{shareTitle}}</p>
+                <div class="poster-box-8">
+                    <div class="box-info">
+                        <div class="user-info2">
+                            <div><img class="user-info-img" :src="avatar"></div>
+                            <span class="user-info-name">{{userName}}</span>
+                        </div>
+                        <div class="poster-user-title1">{{shareText}}</div>
+                        <div class="poster-user-title1 color8-two" v-if="liveTime">最近直播:{{liveTime}}</div>
+                        <div class="poster-user-title1">- {{eduText}} -</div>
+                    </div>
+                    <div><img class="share-ewm8" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+            </div>
+        </div>
+<!--                        新-->
+        <div class="bs-poster bs-poster-4A" :id=[`bs-poster-${posterImg.list_pic.length+4}`] v-if="posterImg.list_npic[4].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[4].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit9">{{shareTitle}}</p>
+                <div class="poster-box-8">
+                    <div class="box-info">
+                        <div class="user-info2">
+                            <div><img class="user-info-img" :src="avatar"></div>
+                            <span class="user-info-name info-name3">{{userName}}</span>
+                        </div>
+                        <div class="poster-user-title1 info-title-color3">{{shareText}}</div>
+                        <div class="poster-user-title1 color10-two" v-if="liveTime">最近直播:{{liveTime}}</div>
+                        <div class="poster-user-title1 info-title-color3">- {{eduText}} -</div>
+                    </div>
+                    <div><img class="share-ewm8" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+            </div>
+        </div>
+        <div class="bs-poster bs-poster-5A" :id=[`bs-poster-${posterImg.list_pic.length+5}`] v-if="posterImg.list_npic[5].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[5].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit10">{{shareTitle}}</p>
+                <div class="poster-box-10">
+                    <div class="box-info">
+                        <div class="user-info2">
+                            <div><img class="user-info-img" :src="avatar"></div>
+                            <span class="user-info-name">{{userName}}</span>
+                        </div>
+                        <div class="poster-user-title1">{{shareText}}</div>
+                        <div class="poster-user-title1 color11-two" v-if="liveTime">最近直播:{{liveTime}}</div>
+                        <div class="poster-user-title1">- {{eduText}} -</div>
+                    </div>
+                    <div><img class="share-ewm8" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+            </div>
+        </div>
+        <div class="bs-poster bs-poster-6A" :id=[`bs-poster-${posterImg.list_pic.length+6}`] v-if="posterImg.list_npic[6].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[6].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit11">{{shareTitle}}</p>
+                <p class="live-time11" v-if="liveTime">最近直播：{{liveTime}}</p>
+                <div class="poster-box-11">
+                    <div class="box-info">
+                        <div class="user-info2">
+                            <div class="info-img5"><img class="user-info-img" :src="avatar"></div>
+                            <span class="user-info-name info-name5">{{userName}}</span>
+                        </div>
+                        <div class="poster-user-title1 info-title-color5">{{shareText}}</div>
+                        <div class="poster-user-title1 info-title-color5">- {{eduText}} -</div>
+                    </div>
+                    <div><img class="share-ewm8" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+            </div>
+        </div>
+        <div class="bs-poster bs-poster-7A" :id=[`bs-poster-${posterImg.list_pic.length+7}`] v-if="posterImg.list_npic[7].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[7].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit12">{{shareTitle}}</p>
+                <div class="poster-box-12">
+                    <div class="box-info">
+                        <div class="user-info2">
+                            <div><img class="user-info-img" :src="avatar"></div>
+                            <span class="user-info-name info-name6">{{userName}}</span>
+                        </div>
+                        <div class="poster-user-title1 info-title-color6">{{shareText}}</div>
+                        <div class="poster-user-title1 color12-two" v-if="liveTime">最近直播:{{liveTime}}</div>
+                        <div class="poster-user-title1 info-title-color6">- {{eduText}} -</div>
+                    </div>
+                    <div><img class="share-ewm8" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+            </div>
+        </div>
+        <div class="bs-poster bs-poster-8A" :id=[`bs-poster-${posterImg.list_pic.length+8}`] v-if="posterImg.list_npic[8].isSecShow">
+            <div><img class="bs-poster-bg" :src="posterImg.list_npic[8].bg" alt=""></div>
+            <div class="poster-box1">
+                <p class="poster-tit13">{{shareTitle}}</p>
+                <div class="poster-box-13">
+                    <div class="user-img-border"><img class="user-info-img" :src="avatar"></div>
+                    <div class="user-info-name">{{userName}}</div>
+                    <div class="poster-user-title7">{{shareText}}</div>
+                    <div class="poster-live-time" v-if="liveTime">最近直播:{{liveTime}}</div>
+                    <div class="poster-user-title7">- {{eduText}} -</div>
+                    <div class="share-ewm13-border"><img class="share-ewm13" :src="ewmImg"></div>
+                </div>
+                <div class="company-logo" v-if="companyText"><img :src="compangLogo" alt="">{{companyText}}</div>
+            </div>
         </div>
     </div>
+
+    <!--白板-->
+    <div class="white-bg"></div>
+
+    <!--海报预览区-->
+    <section class="bs-review__wrap">
+        <div id="posterPicSwiper" class="swiper-container swiper-no-swiping poster-pic">
+            <div v-if="type == 1" class="swiper-wrapper">
+                <div class="swiper-slide swiper-no-swiping" v-for="(item,index) in posterImg.list_pic">
+                    <img class="poster-img" v-if="item.isPoster" :src="item.src" alt="" crossorigin="anonymous">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[0].isPoster" :src="posterImg.list_npic[0].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[1].isPoster" :src="posterImg.list_npic[1].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[2].isPoster" :src="posterImg.list_npic[2].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[3].isPoster" :src="posterImg.list_npic[3].src" alt="">
+                </div>
+
+<!--                新-->
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[4].isPoster" :src="posterImg.list_npic[4].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[5].isPoster" :src="posterImg.list_npic[5].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[6].isPoster" :src="posterImg.list_npic[6].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+
+                    <img class="poster-img" v-if="posterImg.list_npic[7].isPoster" :src="posterImg.list_npic[7].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[8].isPoster" :src="posterImg.list_npic[8].src" alt="">
+                </div>
+            </div>
+            <div v-if="type == 2" class="swiper-wrapper">
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[0].isPoster" :src="posterImg.list_npic[0].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[1].isPoster" :src="posterImg.list_npic[1].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[2].isPoster" :src="posterImg.list_npic[2].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[3].isPoster" :src="posterImg.list_npic[3].src" alt="">
+                </div>
+
+<!--                新-->
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[4].isPoster" :src="posterImg.list_npic[4].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[5].isPoster" :src="posterImg.list_npic[5].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[6].isPoster" :src="posterImg.list_npic[6].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[7].isPoster" :src="posterImg.list_npic[7].src" alt="">
+                </div>
+                <div class="swiper-slide swiper-no-swiping">
+                    <img class="poster-img" v-if="posterImg.list_npic[8].isPoster" :src="posterImg.list_npic[8].src" alt="">
+                </div>
+            </div>
+            <div class="save-sec">
+                <img class="save-icon" src="./imgs/xz-save-icon.png">
+                <p class="save-text">长按上方图片保存到相册</p>
+            </div>
+        </div>
+
+    </section>
+    <!-- 海报模板Swiper -->
+    <div class=" swiper-container poster-temp">
+        <div v-if="type == 1" class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(item, index) in typeImgList1">
+                <img class="type-img" :src="item.src">
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div v-if="type == 2" class="swiper-slide" v-for="(item, index) in typeImgList2">
+                <img class="type-img" :src="item.src">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bs-footer">
+        <div class="btm-box Share" id="weixinShare" @click="shareWxPath">
+            <img src="./imgs/wx-icon.png" class="btm-icon">
+            <button class="btn-sec" open-type=share hover-class="none">分享到微信</button>
+        </div>
+        <div class="btm-box Share" id="qqShare" @click="shareQQPath">
+            <img src="./imgs/QQ-icon.png" class="btm-icon">
+            <button class="btn-sec" open-type=share hover-class="none">分享到QQ</button>
+        </div>
+        <div class="btm-box Share" id="copyUrl" @click="copyPath">
+            <img src="./imgs/path-icon.png" class="btm-icon">
+            <button class="btn-sec" open-type=share hover-class="none">复制链接</button>
+        </div>
+    </footer>
+    <div class="cavImgLoading" id="cavImgLoading" v-if="loading">
+        <div class="modal-overlay modal-overlay-visible"></div>
+        <div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>
+    </div>
+</div>
+<div id="qrcode__wrap" class="hide"></div>
+<block if="!(${#maps.containsKey(shopDataSwitch,'copyRight')} and ${shopDataSwitch.copyRight} == 'off') or ( ${#maps.containsKey(shopDataSwitch,'copyRightEndTime')} and (${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')} ge ${shopDataSwitch['copyRightEndTime']}))">
+    <input type="hidden" id="companyText" value="268教育软件提供技术支持">
+</block>
+<input type="hidden" id="eduText" value="${eduText}">
+<input type="hidden" id="userName" value="${userName}">
+<input type="hidden" id="avatar" value="${avatar}">
+<input type="hidden" id="compangLogo" value="${logoMap['url']}">
+<input type="hidden" id="shareUrl" value="${shareUrl}">
+<input type="hidden" id="courseImage" value="${courseImage}">
+<input type="hidden" id="type" value="${type}">
+<input type="hidden" id="shareTitle" value="${shareTitle}">
+<input type="hidden" id="shareText" value="${shareText}">
+<input type="hidden" id="liveTime" value="${liveTime}">
+<input type="hidden" id="source" value="${source}">
+<div data-th-replace="layout/footer"></div>
+
+<!--引入vue-->
 <script src="./js/vue.js"></script>
+<script src="./js/cooking.js"></script>
+<script src="./js/jquery-3.5.1.min.js"></script>
+<!--引入swiper-->
 <script src="./js/swiper.js"></script>
-
-<!-- 1.0.0-rc.5 一般H5环境， (公司环境不行) 生成图片效果最好的一个 -->
-<script src="./js/html2canvas-5.js"></script>
-<script src="./js/poster.js"></script>
-
-<!-- 1.0.0-rc.1 一般环境，公司环境都可以 版本环境兼容性比较强的一个 -->
-<!-- <script src="./js/html2canvas-2.js"></script>
-<script src="./js/xm2poster.js"></script> -->
-
-<!-- 0.5.0-beta4 公司特殊环境，弊端：不可将缩放字体展示，内容为空白，效果不太强 -->
-<!-- <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
-<script src="./js/xmposter.js"></script> -->
-
-
-<script>
-    
-</script>
+<script src="./js/html2canvas-0.5.0-beta4.js"></script>
+<script src="./js/optimize-index.js"></script>
+<script src="./js/qrcode.min.js"></script>
 </body>
 </html>
